@@ -2,7 +2,6 @@ package dao;
 
 import entity.Groupp;
 import util.DBUtil;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -6,21 +6,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
-import com.jspsmart.upload.SmartUploadException;
 import entity.Groupp;
 import service.GroupService;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.Part;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.List;
 
 @WebServlet("/GroupServlet")
-public class GroupServlet extends HttpServlet {
-
+public class GroupServlet  extends HttpServlet{
+    // extends HttpServlet
     /**
      *
      */

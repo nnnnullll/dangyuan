@@ -3,7 +3,6 @@ package service;
 import dao.MyGroupDao;
 import entity.Groupp;
 
-import java.util.List;
 
 public class GroupService {
     MyGroupDao myGroupDao=new MyGroupDao();
