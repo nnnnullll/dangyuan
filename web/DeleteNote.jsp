@@ -28,7 +28,7 @@
             <div class="notelistnr_nr">内容1</div>
           </div>
           <div class="notelistsc">
-            <el-button @click="condeletenote(note.ggh)">删除</el-button>
+            <button @click="condeletenote(note.ggh)">删除</button>
           </div>
         </div>
       </div>
