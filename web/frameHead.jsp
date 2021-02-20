@@ -46,8 +46,8 @@
                     <li><a href="Note.jsp"><span>查看公告</span></a></li>
                     <li class="submenu"><a href="#"><span>党小组</span><span class="menu-arrow"></span></a>
                         <ul>
-                            <li><a href="GroupInfo.jsp">(公共的)小组信息</a></li>
-                            <li><a href="ModifyGroup.jsp">（组长）成员管理</a></li>
+                            <li><a href="GroupShow.jsp">(公共的)小组信息</a></li>
+                            <li><a href="GroupModify.jsp">（组长）成员管理</a></li>
                             <li><a href="DeleteNote.jsp">（组长）删除公告</a></li>
                             <li><a href="PushNote.jsp">（公共看组长发布）公告</a></li>
                             <li><a href="PushActivity.jsp">（公共看组长发布）活动记录</a></li>
@@ -57,7 +57,7 @@
                         <ul>
                             <li><a href="ImportList.jsp">（管理员）导入名单</a></li>
                             <li><a href="ImportGroupLeader.jsp">（管理员）党小组导入</a></li>
-                            <li><a href="ModifyBranch.jsp">(管理员)成员管理</a></li>
+                            <li><a href="PartyModify.jsp">(管理员)成员管理</a></li>
                             <li><a href="MemberList.jsp">(公共的)支部信息</a></li>
                             <li><a href="PushNote.jsp">(管理员)发布公告</a></li>
                             <li><a href="DeleteNote.jsp">(管理员)删除公告</a></li>
@@ -76,4 +76,4 @@
         </div>
     </div><!-- /Sidebar -->
 
-
+</div>
