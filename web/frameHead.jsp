@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/owl.css"/>
     <link rel="stylesheet" href="css/lightbox.css"/>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/note.css">
 </head>
 
 <body>
