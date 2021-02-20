@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import entity.Note;
 import service.NoteService;
 
-@WebServlet("/getnotebydx")
+@WebServlet("/NoteServlet")
 public class NoteServlet extends HttpServlet{
     private NoteService noteService = new NoteService();
 
@@ -22,6 +22,6 @@ public class NoteServlet extends HttpServlet{
         String param = request.getParameter("dxx");
         List<Note> notelist=noteService.getNoteBydx(Integer.parseInt(request.getParameter("dxx")));
         request.setAttribute("notelist", notelist);
-        request.getRequestDispatcher("/DeleteNote.jsp").forward(request, response); 
+        request.getRequestDispatcher("DeleteNote.jsp").forward(request, response); 
     }  
 }
