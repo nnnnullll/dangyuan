@@ -11,7 +11,7 @@
 <div class="mainBorder">
     <h3>党小组添加删除成员</h3>
     <div class="mainContent">
-        这里是修改的内容
+
     </div>
 
 </div>

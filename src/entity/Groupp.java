@@ -5,6 +5,42 @@ public class Groupp {
     Integer zbid;
     Integer zbsjid;
     String zm;
+    String zbsjm;
+    String zbm;
+
+
+    public Groupp(Integer zid, Integer zbid, Integer zbsjid, String zm, String zbsjm, String zbm) {
+        this.zid = zid;
+        this.zbid = zbid;
+        this.zbsjid = zbsjid;
+        this.zm = zm;
+        this.zbsjm = zbsjm;
+        this.zbm = zbm;
+    }
+
+    public String getZbm() {
+        return zbm;
+    }
+
+    public void setZbm(String zbm) {
+        this.zbm = zbm;
+    }
+
+    public String getZbsjm() {
+        return zbsjm;
+    }
+
+    public void setZbsjm(String zbsjm) {
+        this.zbsjm = zbsjm;
+    }
+
+    public Groupp(Integer zid, Integer zbid, Integer zbsjid, String zm, String zbsjm) {
+        this.zid = zid;
+        this.zbid = zbid;
+        this.zbsjid = zbsjid;
+        this.zm = zm;
+        this.zbsjm = zbsjm;
+    }
 
     @Override
     public String toString() {
@@ -16,12 +52,6 @@ public class Groupp {
                 '}';
     }
 
-    public Groupp(Integer zid, Integer zbid, Integer zbsjid, String zm) {
-        this.zid = zid;
-        this.zbid = zbid;
-        this.zbsjid = zbsjid;
-        this.zm = zm;
-    }
 
     public Integer getZid() {
         return zid;
