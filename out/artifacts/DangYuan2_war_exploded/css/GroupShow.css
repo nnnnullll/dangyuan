@@ -1,0 +1,35 @@
+.myinput{
+    width: 406px;
+    height: 49px;
+    background: #B6B6B6;
+    /*border: 3px solid #000000;*/
+    opacity: 0.56;
+    border-radius: 10px;
+    color: #000000;
+    font-size:20px;
+    margin-top: 10px;
+}
+.mysub{
+    width: 406px;
+    height: 49px;
+    background: #a23e48;
+    /*border: 3px solid #000000;*/
+    border-radius: 10px;
+    color: white;
+    font-size:20px;
+    margin-top: 10px;
+
+}
+
+.mytext{
+    width: 180px;
+    height: 24px;
+    font-size: 25px;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: #858686;
+    line-height: 1px;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+

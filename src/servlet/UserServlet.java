@@ -1,5 +1,7 @@
 package servlet;
 
+import entity.Groupp;
+import entity.Head;
 import entity.Member;
 import service.UserService;
 
@@ -17,12 +19,19 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String type=req.getParameter("type");
-        Integer id=Integer.parseInt(req.getParameter("id"));
-        Object user=userService.getUserInfo(type,id);
+        System.out.println("type:"+type);
+//        Integer id=Integer.parseInt(req.getParameter("id"));
+//        Object user=userService.getUserInfo(type,id);
         if("member".equals(type)){
 
         }else if("head".equals(type)){
-
+            if("changehead".equals(req.getParameter("way"))){
+                Integer zid=Integer.parseInt(req.getParameter("zid"));
+                Integer zbid=Integer.parseInt(req.getParameter("zbid"));
+                Integer zzid=Integer.parseInt(req.getParameter("zzid"));
+                userService.addHead(zid,zzid,zbid);
+                resp.sendRedirect("GroupServlet?param=search&zid="+zid);
+            }
         }else if("admin".equals(type)){
 
         }

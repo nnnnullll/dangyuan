@@ -23,24 +23,24 @@
             </tr>
         </table>
         <table id="stuTb" width="800" border="1" align="center">
-            <tr> <td>姓名</td> <td>姓名</td> </tr>
-            <tr> <td>性别</td> <td>姓名</td> </tr>
-            <tr> <td>出生日期</td> <td>姓名</td> </tr>
-            <tr> <td>籍贯</td> <td>姓名</td> </tr>
-            <tr> <td>身份证号码</td> <td>姓名</td> </tr>
-            <tr> <td>手机号</td> <td>姓名</td> </tr>
-            <tr> <td>组id</td> <td>姓名</td> </tr>
-            <tr> <td>支部id</td> <td>姓名</td> </tr>
-            <tr> <td>党员id</td> <td>姓名</td> </tr>
-            <tr> <td>申请日期</td> <td>姓名</td> </tr>
-            <tr> <td>积极日期</td> <td>姓名</td> </tr>
-            <tr> <td>发展日期</td> <td>姓名</td> </tr>
-            <tr> <td>预备日期</td> <td>姓名</td> </tr>
-            <tr> <td>正式日期</td> <td>姓名</td> </tr>
-            <tr> <td>入党状态</td> <td>姓名</td> </tr>
-            <tr> <td>头像</td> <td>姓名</td> </tr>
-            <tr> <td>申请书</td> <td>姓名</td> </tr>
-            <tr> <td>志愿书</td> <td>姓名</td> </tr>
+            <tr> <td>姓名</td> <td>${user.xm}</td> </tr>
+            <tr> <td>性别</td> <td>${user.xb}</td> </tr>
+            <tr> <td>出生日期</td> <td>${user.csrq}</td> </tr>
+            <tr> <td>籍贯</td> <td>${user.xb}</td> </tr>
+            <tr> <td>身份证号码</td> <td>${user.xb}</td> </tr>
+            <tr> <td>手机号</td> <td>${user.xb}</td> </tr>
+            <tr> <td>组id</td> <td>${user.xb}</td> </tr>
+            <tr> <td>支部id</td> <td>${user.xb}</td> </tr>
+            <tr> <td>党员id</td> <td>${user.xb}</td> </tr>
+            <tr> <td>申请日期</td> <td>${user.xb}</td> </tr>
+            <tr> <td>积极日期</td> <td>${user.xb}</td> </tr>
+            <tr> <td>发展日期</td> <td>${user.xb}</td> </tr>
+            <tr> <td>预备日期</td> <td>${user.xb}</td> </tr>
+            <tr> <td>正式日期</td> <td>${user.xb}</td> </tr>
+            <tr> <td>入党状态</td> <td>${user.xb}</td> </tr>
+            <tr> <td>头像</td> <td>${user.xb}</td> </tr>
+            <tr> <td>申请书</td> <td>${user.sqs1}</td> <td>${user.sqs2}</td> </tr>
+            <tr> <td>志愿书</td> <td>${user.zys1}</td> <td>${user.zys2}</td></tr>
         </table>
     </div>
 

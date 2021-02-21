@@ -13,26 +13,26 @@
     <div class="mainContent">
         <form action="PartyServlet?param=update" method="post" >
             <%--    enctype="multipart/form-data"--%>
-            <table width="400">
+            <table width="1500px">
                 <tr>
-                    <td>党支部名：</td>
-                    <td><input type="text" readonly="readonly" id="zbm" name="zbm" value="${requestScope.party.zbm}" /></td>
+                    <td class="mytext">所属党支部名：</td>
+                    <td><input class="myinput" type="text" readonly="readonly" id="zbm" name="zbm" value="${requestScope.party.zbm}" /></td>
                 </tr>
                 <tr>
-                    <td>党支部号：</td>
-                    <td><input type="text" readonly="readonly" id="zbid" name="zbid" value="${requestScope.party.zbid}" /></td>
+                    <td class="mytext">所属党支部号：</td>
+                    <td><input type="text" class="myinput" readonly="readonly" id="zbid" name="zbid" value="${requestScope.party.zbid}" /></td>
                 </tr>
                 <tr>
-                    <td>党支部书记姓名：</td>
-                    <td><input type="text" readonly="readonly" id="zbsjm" name="zbsjm" value="${requestScope.party.zbsjm}" /></td>
+                    <td class="mytext">党支部书记名：</td>
+                    <td><input class="myinput" type="text" readonly="readonly" id="zbsjm" name="zbsjm" value="${requestScope.party.zbsjm}" /></td>
                 </tr>
                 <tr>
-                    <td>党支部书记号：</td>
-                    <td><input type="text"  id="zbsjid" name="zbsjid" value="${requestScope.party.zbsjid}" /></td>
+                    <td class="mytext">党支部书记号：</td>
+                    <td><input class="myinput" type="text"  id="zbsjid" name="zbsjid" value="${requestScope.party.zbsjid}" /></td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" value="提交" />
+                        <input  class="mysub" style="width: 180px;margin-left: 408px;" type="submit" value="提交" onclick="alert('党支部书记修改成功！')" />
                     </td>
                 </tr>
             </table>

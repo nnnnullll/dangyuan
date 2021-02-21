@@ -32,15 +32,13 @@ public class GroupServlet  extends HttpServlet{
             //查找本党小组信息
             Groupp groupp=groupService.getGroupById(Integer.parseInt(request.getParameter("zid")));
             request.setAttribute("groupp", groupp);
-
             //转发至index.jsp
             request.getRequestDispatcher("/GroupShow.jsp").forward(request, response);
         }
-        if("update".equals(param)) {//修改学生
+        if("update".equals(param)) {
             Integer zid=Integer.parseInt(request.getParameter("zid"));
             String zm = request.getParameter("zm");
             groupService.updateInfo(zm,zid);
-            //用户想要查看学生列表，进入主界面
             response.sendRedirect("GroupServlet?param=search&zid="+zid);
         }
 //        if("add".equals(param)) {//添加学生

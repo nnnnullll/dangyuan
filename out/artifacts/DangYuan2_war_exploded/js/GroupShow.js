@@ -9,6 +9,17 @@ window.onload=function getGroupInfo() {
          //var zbid=localStorage.getItem("zid");
          window.location.href='PartyServlet?param=search&zbid='+zbid;
      }
+     else if(window.location.pathname=='/DangYuan2_war_exploded/PartyModify.jsp'){
+         //zbid=localStorage.getItem("zbid");
+         zbid=1;
+         document.getElementById('zbid').value=zbid;
+     }
 
     console.log(window.location.pathname)
 }
+
+function remind() {
+    alert("所属党小组名修改成功！");
+}
+
+

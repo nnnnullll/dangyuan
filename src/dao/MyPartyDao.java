@@ -3,6 +3,7 @@ package dao;
 import entity.Groupp;
 import entity.Party;
 import service.PartyService;
+import service.UserService;
 import util.DBUtil;
 
 import java.sql.PreparedStatement;
@@ -56,7 +57,7 @@ public class MyPartyDao {
         }
     }
 
-    //在admin表中把原来的支部书记对应的支部换成0（表示已经移除）
+    //在admin表中把原来的支部书记对应的支部换成指定的zbid  （0表示无支部）
     public void updateAdmin(Integer zbid,Integer zbsjid){
         String sql="update admin set zbid=? where glyid=?";
         PreparedStatement pstmt= DBUtil.getInstance().getPreparedStatement(sql);
@@ -73,24 +74,7 @@ public class MyPartyDao {
     }
 
 
-    public void addGroup(Integer zid,Integer zzid,Integer zbid){
-        //新增组号并任命组长
-        String sql="update `head` set zid=? where zbid=? and zzid=?";
-        PreparedStatement pstmt= DBUtil.getInstance().getPreparedStatement(sql);
-        try {
-            pstmt.setInt(1, zid);
-            pstmt.setInt(2, zbid);
-            pstmt.setInt(3, zzid);
-            //这里需要将原来的组长的zid改成0，表示已经不是组长了
 
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }finally {
-            DBUtil.getInstance().closeDBResources();
-        }
-    }
 
 
 

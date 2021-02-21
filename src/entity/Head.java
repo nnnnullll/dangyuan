@@ -10,6 +10,12 @@ public class Head {
     Integer zt;
     String sqs1,sqs2,zys1,zys2;
 
+    public Head(Integer zzid, Integer zid, Integer zbid) {
+        this.zzid = zzid;
+        this.zid = zid;
+        this.zbid = zbid;
+    }
+
     public Head(Integer zzid, String mm, Integer zid, Integer zbid, String tx, Integer dyid, String xm, String sjh, String sfz, String xb, String csrq, String jg, String sqrq, String jjrq, String fzrq, String ybrq, String zsrq, Integer zt, String sqs1, String sqs2, String zys1, String zys2) {
         this.zzid = zzid;
         this.mm = mm;
