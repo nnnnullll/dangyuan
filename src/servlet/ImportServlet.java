@@ -48,7 +48,7 @@ public class ImportServlet extends HttpServlet {
         String filePath = getServletContext().getRealPath("/Excel");
         String fileName = new StringBuilder(new String("Excel").hashCode()).append(System.currentTimeMillis()).toString();
         try {
-            file.saveAs(filePath+"\\"+fileName+".jpg");
+            file.saveAs(filePath+"\\"+fileName+".xls");
         } catch (SmartUploadException smartUploadException) {
             smartUploadException.printStackTrace();
         }
