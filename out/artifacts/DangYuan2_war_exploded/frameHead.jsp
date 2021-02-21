@@ -63,7 +63,7 @@
                             <li><a href="DeleteNote.jsp">(管理员)删除公告</a></li>
                         </ul>
                     </li>
-                    <li><a href="UserInfo.jsp"><span>个人信息</span></a></li>
+                    <li><a href="userServlet?param=info&type=member&id=1"><span>个人信息</span></a></li>
                     <li class="submenu"><a href="#"><span>Contact Me</span><span class="menu-arrow"></span></a>
                         <ul>
                             <li><a href="#">Student List</a></li>
