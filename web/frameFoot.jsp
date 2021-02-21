@@ -13,7 +13,7 @@
 <!-- Bootstrap core JavaScript -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
-
+<script src="js/node.js"></script>
 <script src="js/isotope.min.js"></script>
 <script src="js/owl-carousel.js"></script>
 <script src="js/lightbox.js"></script>

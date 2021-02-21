@@ -4,7 +4,7 @@ import entity.Groupp;
 import util.DBUtil;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.SQLException; 
 
 public class MyGroupDao{
     //根据id查询党小组信息
