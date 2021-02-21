@@ -26,7 +26,9 @@
     <link rel="stylesheet" href="css/owl.css"/>
     <link rel="stylesheet" href="css/lightbox.css"/>
     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/note.css">
+    <link rel="GroupShow" href="css/GroupShow.css">
+    <link rel="PartyShow" href="css/PartyShow.css">
 </head>
 
 <body>
