@@ -1,7 +1,6 @@
 package service;
 
 import dao.UserDao;
-import entity.Member;
 
 public class UserService {
     UserDao userDao = new UserDao();

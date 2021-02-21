@@ -10,6 +10,25 @@ public class Member {
     Integer zt;
     String sqs1,sqs2,zys1,zys2;
 
+    public Member(Integer cyid, String mm, Integer zid, Integer zbid, Integer dyid, String xm, String sjh, String sfz, String xb, String csrq, String jg, String sqrq, String jjrq, String fzrq, String ybrq, String zsrq) {
+        this.cyid = cyid;
+        this.mm = mm;
+        this.zid = zid;
+        this.zbid = zbid;
+        this.dyid = dyid;
+        this.xm = xm;
+        this.sjh = sjh;
+        this.sfz = sfz;
+        this.xb = xb;
+        this.csrq = csrq;
+        this.jg = jg;
+        this.sqrq = sqrq;
+        this.jjrq = jjrq;
+        this.fzrq = fzrq;
+        this.ybrq = ybrq;
+        this.zsrq = zsrq;
+    }
+
     public Member(Integer cyid, String mm, Integer zid, Integer zbid, String tx, Integer dyid, String xm, String sjh, String sfz, String xb, String csrq, String jg, String sqrq, String jjrq, String fzrq, String ybrq, String zsrq, Integer zt, String sqs1, String sqs2, String zys1, String zys2) {
         this.cyid = cyid;
         this.mm = mm;
