@@ -14,7 +14,7 @@ public class Note {
 
     public void setGgid(Integer ggid) {
         this.ggid = ggid;
-    }
+    } 
 
     public String getBt() {
         return bt;

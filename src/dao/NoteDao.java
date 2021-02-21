@@ -23,7 +23,7 @@ public class NoteDao {
                 String bt=rs.getString("bt");
                 String nr=rs.getString("nr");
                 String sj=rs.getString("sj");
-                Integer dx=rs.getInt("dx");
+                Integer dx=rs.getInt("dx"); 
                 Integer sc=rs.getInt("sc");
                 Note n=new Note(ggid,bt,nr,sj,dx,sc);
                 notelist.add(n);

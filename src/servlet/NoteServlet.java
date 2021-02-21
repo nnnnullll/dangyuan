@@ -23,5 +23,5 @@ public class NoteServlet extends HttpServlet{
         List<Note> notelist=noteService.getNoteBydx(Integer.parseInt(request.getParameter("dxx")));
         request.setAttribute("notelist", notelist);
         request.getRequestDispatcher("DeleteNote.jsp").forward(request, response); 
-    }  
+    }   
 }
