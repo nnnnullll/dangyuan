@@ -10,7 +10,7 @@ public class Member {
     Integer zt;
     String sqs1,sqs2,zys1,zys2;
 
-    public Member(Integer cyid, String mm, Integer zid, Integer zbid, Integer dyid, String xm, String sjh, String sfz, String xb, String csrq, String jg, String sqrq, String jjrq, String fzrq, String ybrq, String zsrq) {
+    public Member(Integer cyid, String mm, Integer zid, Integer zbid, Integer dyid, String xm, String sjh, String sfz, String xb, String csrq, String jg, String sqrq, String jjrq, String fzrq, String ybrq, String zsrq,Integer zt) {
         this.cyid = cyid;
         this.mm = mm;
         this.zid = zid;
@@ -27,6 +27,7 @@ public class Member {
         this.fzrq = fzrq;
         this.ybrq = ybrq;
         this.zsrq = zsrq;
+        this.zt=zt;
     }
 
     public Member(Integer cyid, String mm, Integer zid, Integer zbid, String tx, Integer dyid, String xm, String sjh, String sfz, String xb, String csrq, String jg, String sqrq, String jjrq, String fzrq, String ybrq, String zsrq, Integer zt, String sqs1, String sqs2, String zys1, String zys2) {

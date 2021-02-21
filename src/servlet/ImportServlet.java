@@ -42,18 +42,18 @@ public class ImportServlet extends HttpServlet {
         } catch (SmartUploadException e) {
             e.printStackTrace();
         }
-        List<Member> memberList=null;
+        List<Member> memberList = null;
 
         File file=su.getFiles().getFile(0);
-        String filePath = getServletContext().getRealPath("/donation");
-        String fileName = new StringBuilder(new String("123").hashCode()).append(System.currentTimeMillis()).toString();
+        String filePath = getServletContext().getRealPath("/Excel");
+        String fileName = new StringBuilder(new String("Excel").hashCode()).append(System.currentTimeMillis()).toString();
         try {
             file.saveAs(filePath+"\\"+fileName+".jpg");
         } catch (SmartUploadException smartUploadException) {
             smartUploadException.printStackTrace();
         }
         int sheetNum=0;
-        java.io.File sourcefile = new java.io.File(filePath+"\\"+fileName+".jpg");
+        java.io.File sourcefile = new java.io.File(filePath+"\\"+fileName+".xls");
         InputStream is = new FileInputStream(sourcefile);
         Workbook workbook = null;
         try {
@@ -63,7 +63,7 @@ public class ImportServlet extends HttpServlet {
         }
         Sheet sheet = workbook.getSheet(0);
         // 行数
-        int rows = sheet.getColumns();
+        int rows = sheet.getRows();
         // 列数
         int columns = sheet.getColumns();
 
@@ -79,6 +79,7 @@ public class ImportServlet extends HttpServlet {
             Cell ce10 = ((jxl.Sheet) sheet).getCell(10, i);Cell ce11 = ((jxl.Sheet) sheet).getCell(11, i);
             Cell ce12 = ((jxl.Sheet) sheet).getCell(12, i);Cell ce13 = ((jxl.Sheet) sheet).getCell(13, i);
             Cell ce14 = ((jxl.Sheet) sheet).getCell(14, i);Cell ce15 = ((jxl.Sheet) sheet).getCell(15, i);
+            Cell ce16 = ((jxl.Sheet) sheet).getCell(16, i);
 
             String c0 = ce0.getContents();String c1 = ce1.getContents();
             String c2 = ce2.getContents();String c3 = ce3.getContents();
@@ -88,8 +89,10 @@ public class ImportServlet extends HttpServlet {
             String c10 = ce10.getContents();String c11 = ce11.getContents();
             String c12 = ce12.getContents();String c13 = ce13.getContents();
             String c14 = ce14.getContents();String c15 = ce15.getContents();
-            Member member=importService.ImportMember(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15);
-            memberList.add(member);
+            String c16=ce16.getContents();
+            //Member member=
+            importService.ImportMember(c0,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16);
+            //memberList.add(member);
         }
     }
 }

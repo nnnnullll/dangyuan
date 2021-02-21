@@ -10,7 +10,7 @@ public class ImportService {
     public Member ImportMember(String cyid, String mm, String zid,
                                String zbid, String dyid, String xm, String sjh, String sfz,
                                String zb, String csrq, String jg, String sqrq, String jjrq, String fzrq,
-                               String ybrq, String zsrq) {
-        return  importDao.ImportMember(cyid,mm,zid,zbid,dyid,xm,sjh,sfz,zb,csrq,jg,sqrq,jjrq,fzrq,ybrq,zsrq);
+                               String ybrq, String zsrq,String zt) {
+        return  importDao.ImportMember(cyid,mm,zid,zbid,dyid,xm,sjh,sfz,zb,csrq,jg,sqrq,jjrq,fzrq,ybrq,zsrq,zt);
     }
 }
