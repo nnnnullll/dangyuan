@@ -19,12 +19,18 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String type=req.getParameter("type");
-        System.out.println("type:"+type);
 //        Integer id=Integer.parseInt(req.getParameter("id"));
 //        Object user=userService.getUserInfo(type,id);
         if("member".equals(type)){
-
-        }else if("head".equals(type)){
+            if("addmember".equals(req.getParameter("way"))){
+                Integer zid=Integer.parseInt(req.getParameter("zid"));
+                Integer zbid=Integer.parseInt(req.getParameter("zbid"));
+                Integer cyid=Integer.parseInt(req.getParameter("cyid"));
+                userService.addMember(zid,cyid,zbid);
+                resp.sendRedirect("/DangYuan2_war_exploded/GroupModify.jsp");
+            }
+        }
+        if("head".equals(type)){
             if("changehead".equals(req.getParameter("way"))){
                 Integer zid=Integer.parseInt(req.getParameter("zid"));
                 Integer zbid=Integer.parseInt(req.getParameter("zbid"));
@@ -32,7 +38,8 @@ public class UserServlet extends HttpServlet {
                 userService.addHead(zid,zzid,zbid);
                 resp.sendRedirect("GroupServlet?param=search&zid="+zid);
             }
-        }else if("admin".equals(type)){
+        }
+        else if("admin".equals(type)){
 
         }
 

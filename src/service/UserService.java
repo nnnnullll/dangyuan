@@ -26,4 +26,7 @@ public class UserService {
     public Integer getSomeHeadInfo(Integer id){
         return userDao.getSomeHeadInfo(id);
     }
+    public void addMember(Integer zid,Integer cyid,Integer zbid){
+        userDao.addMember(zid, cyid, zbid);
+    }
 }

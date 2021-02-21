@@ -10,7 +10,8 @@
 <!-- 下面是修改的页面 -->
 <div class="mainBorder">
     <h3>党支部添加删除组长</h3>
-    <form action="userServlet?type=head&way=changehead" method="post" >
+    <div style="width: 90%;margin: 30px;">
+        <form action="userServlet?type=head&way=changehead" method="post" >
         <%--    enctype="multipart/form-data"--%>
         <table width="1500px">
             <tr>
@@ -32,6 +33,7 @@
             </tr>
         </table>
     </form>
+    </div>
 
 </div>
 

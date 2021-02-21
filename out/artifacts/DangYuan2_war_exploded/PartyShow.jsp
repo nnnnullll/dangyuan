@@ -10,7 +10,7 @@
 <!-- 下面是修改的页面 -->
 <div class="mainBorder">
     <h3>党支部信息展示及修改</h3>
-    <div class="mainContent">
+    <div style="width: 90%;margin: 30px;">
         <form action="PartyServlet?param=update" method="post" >
             <%--    enctype="multipart/form-data"--%>
             <table width="1500px">

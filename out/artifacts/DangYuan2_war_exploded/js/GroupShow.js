@@ -14,6 +14,11 @@ window.onload=function getGroupInfo() {
          zbid=1;
          document.getElementById('zbid').value=zbid;
      }
+     else if(window.location.pathname=='/DangYuan2_war_exploded/GroupModify.jsp'){
+         //zbid=localStorage.getItem("zbid");
+         zbid=1;
+         document.getElementById('zbid').value=zbid;
+     }
 
     console.log(window.location.pathname)
 }

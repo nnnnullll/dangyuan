@@ -86,6 +86,22 @@ public class UserDao {
         }
     }
 
+    public void addMember(Integer zid,Integer cyid,Integer zbid){
+        //成员小组转出:把指定成员的zid换成指定的zid
+        String sql="update `member` set zid=? where zbid=? and cyid=?";
+        PreparedStatement pstmt= DBUtil.getInstance().getPreparedStatement(sql);
+        try {
+            pstmt.setInt(1, zid);
+            pstmt.setInt(2, zbid);
+            pstmt.setInt(3, cyid);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally {
+            DBUtil.getInstance().closeDBResources();
+        }
+    }
 
     public Object getAdminInfo(Integer id) {
         Admin userInfo=null;
@@ -99,18 +115,5 @@ public class UserDao {
         return userInfo;
     }
 
-    public void setHeadByZid(Integer zid,Integer zzid){
-        String sql="update `head` set zid=? where zzid=?";
-        PreparedStatement pstmt= DBUtil.getInstance().getPreparedStatement(sql);
-        try {
-            pstmt.setInt(1, zid);
-            pstmt.setInt(2, zzid);
-            pstmt.executeUpdate();
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }finally {
-            DBUtil.getInstance().closeDBResources();
-        }
-    }
+
 }
