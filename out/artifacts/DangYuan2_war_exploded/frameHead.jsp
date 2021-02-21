@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="css/lightbox.css"/>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/note.css">
+    <link rel="stylesheet" href="css/GroupShow.css">
+    <link rel="stylesheet" href="css/PartyShow.css">
 </head>
 
 <body>
@@ -58,7 +60,7 @@
                             <li><a href="ImportList.jsp">（管理员）导入名单</a></li>
                             <li><a href="ImportGroupLeader.jsp">（管理员）党小组导入</a></li>
                             <li><a href="PartyModify.jsp">(管理员)成员管理</a></li>
-                            <li><a href="MemberList.jsp">(公共的)支部信息</a></li>
+                            <li><a href="PartyShow.jsp">(公共的)支部信息</a></li>
                             <li><a href="PushNote.jsp">(管理员)发布公告</a></li>
                             <li><a href="DeleteNote.jsp">(管理员)删除公告</a></li>
                         </ul>

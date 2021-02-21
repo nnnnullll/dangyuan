@@ -35,6 +35,12 @@ public class GroupServlet  extends HttpServlet{
             //转发至index.jsp
             request.getRequestDispatcher("/GroupShow.jsp").forward(request, response);
         }
+        if("update".equals(param)) {
+            Integer zid=Integer.parseInt(request.getParameter("zid"));
+            String zm = request.getParameter("zm");
+            groupService.updateInfo(zm,zid);
+            response.sendRedirect("GroupServlet?param=search&zid="+zid);
+        }
 //        if("add".equals(param)) {//添加学生
 //            int xh = Integer.parseInt(request.getParameter("xh"));//在此行添加一个断点
 //            String xm = request.getParameter("xm");
@@ -62,23 +68,7 @@ public class GroupServlet  extends HttpServlet{
 //            request.getRequestDispatcher("admin/updateForm.jsp").forward(request, response);
 //
 //        }
-//        if("update".equals(param)) {//修改学生
-//            int xh = Integer.parseInt(request.getParameter("xh"));//在此行添加一个断点
-//            String xm = request.getParameter("xm");
-//            String xb = request.getParameter("xb");
-//            String csrq = request.getParameter("csrq");
-//            String jg = request.getParameter("jg");
-//            String sjhm = request.getParameter("sjhm");
-//            String yxh = request.getParameter("yxh");
-//            String zt = request.getParameter("zt");
-//            int age = Integer.parseInt(request.getParameter("age"));
-//
-//            Student stu = new Student(xh,xm,xb,csrq,jg,sjhm,yxh,zt,age);
-//            stuService.UpdateStudent(stu);
-//
-//            //用户想要查看学生列表，进入主界面
-//            response.sendRedirect("stuServlet?param=list");
-//        }
+
 //        if("delete".equals(param)) {//删除
 //            int xh = Integer.parseInt(request.getParameter("xh"));
 //            stuService.DeleteStudent(xh);

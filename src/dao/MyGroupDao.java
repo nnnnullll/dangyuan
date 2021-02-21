@@ -10,7 +10,7 @@ public class MyGroupDao{
     //根据id查询党小组信息
     public Groupp getGroupById(Integer id) {
         Groupp groupp = null;
-        String sql = "select * from groupp where zid=?";
+        String sql = "select zid,zm,groupp.zbsjid,xm,groupp.zbid,zbm from groupp,admin,party where groupp.zbsjid=admin.glyid and groupp.zbid=party.zbid and zid=?";
         PreparedStatement pstmt = DBUtil.getInstance().getPreparedStatement(sql);
         try {
             pstmt.setInt(1, id);
@@ -20,7 +20,9 @@ public class MyGroupDao{
                 String zm=rs.getString("zm");
                 Integer zbsjid=rs.getInt("zbsjid");
                 Integer zbid=rs.getInt("zbid");
-                groupp=new Groupp(zid,zbid,zbsjid,zm);
+                String zbsjm=rs.getString("xm");
+                String zbm=rs.getString("zbm");
+                groupp=new Groupp(zid,zbid,zbsjid,zm,zbsjm,zbm);
             }
             rs.close();
         } catch (SQLException e) {
