@@ -55,4 +55,19 @@ public class NoteDao {
 			DBUtil.getInstance().closeDBResources();
 		}
 	}
+
+    //删除公告
+	public void deleteNote(Integer ggid) {
+		String sql = "update note set sc=1 where ggid=?";
+		PreparedStatement pstmt = DBUtil.getInstance().getPreparedStatement(sql);
+		try {
+			pstmt.setInt(1, ggid);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			DBUtil.getInstance().closeDBResources();
+		}
+	}
 }

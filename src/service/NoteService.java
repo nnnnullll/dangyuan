@@ -13,4 +13,8 @@ public class NoteService {
     public void addNote(String bt,String nr,String sj,Integer dx){
         noteDao.addNote(bt, nr, sj, dx);
     }
+
+    public void deleteNote(Integer ggid){
+        noteDao.deleteNote(ggid);
+    }
 }
