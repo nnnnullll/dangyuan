@@ -33,6 +33,10 @@ public class UserService {
         userDao.changePwd(type,id,mm);
     }
 
+    public void resetPwd(String type, Integer id, Integer mm) {
+        userDao.resetPwd(type,id,mm);
+    }
+
     public void changeZt(Integer zt,Integer cyid,Integer zbid){
         userDao.changeZt(zt, cyid, zbid);
     }

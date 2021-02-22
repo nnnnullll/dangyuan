@@ -192,6 +192,40 @@ public class UserDao {
         }
     }
 
+    public void resetPwd(String type,Integer id, Integer zbid) {
+        String sql = null;
+        try{
+        if(type=="admin"){
+            sql="update admin set mm=? where glyid=? and zbid=?";
+            PreparedStatement pstmt=DBUtil.getInstance().getPreparedStatement(sql);
+            pstmt.setInt(1,id);
+            pstmt.setInt(2,id);
+            pstmt.setInt(3,zbid);
+            pstmt.executeUpdate();
+        }
+        else if(type=="head"){
+            sql="update head set mm=? where zzid=? and zbid=?";
+            PreparedStatement pstmt=DBUtil.getInstance().getPreparedStatement(sql);
+            pstmt.setInt(1,id);
+            pstmt.setInt(2,id);
+            pstmt.setInt(3,zbid);
+            pstmt.executeUpdate();
+        }
+        else if (type=="member"){
+            sql="update member set mm=? where cyid=? and zbid=?";
+            PreparedStatement pstmt=DBUtil.getInstance().getPreparedStatement(sql);
+            pstmt.setInt(1,id);
+            pstmt.setInt(2,id);
+            pstmt.setInt(3,zbid);
+            pstmt.executeUpdate();
+        }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            DBUtil.getInstance().closeDBResources();
+        }
+    }
+
 
 
     public Integer getSomeHeadInfo(Integer id) {

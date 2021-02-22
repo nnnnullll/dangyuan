@@ -63,7 +63,8 @@ public class UserServlet extends HttpServlet {
             String zys1=req.getParameter("zys1");
             String zys2=req.getParameter("zys2");
             userService.updateUserInfo(type,id,xm,xb,tx,csrq,jg,sfz,sjh,dyid,sqrq,jjrq,fzrq,ybrq,zsrq,sqs1,sqs2,zys1,zys2);
-        }else if("ModifyPwd".equals(param)){
+        }
+        else if("ModifyPwd".equals(param)){
             Integer id=Integer.parseInt(req.getParameter("id"));
             String mm=req.getParameter("mm");
             userService.changePwd(type,id,mm);
@@ -85,6 +86,21 @@ public class UserServlet extends HttpServlet {
                 Integer cyid=Integer.parseInt(req.getParameter("cyid"));
                 userService.changeZt(zt,cyid,zbid);
                 resp.sendRedirect("/DangYuan2_war_exploded/GroupModify.jsp");
+            }
+            if("resetMm".equals(req.getParameter("param"))){
+                Integer zbid=Integer.parseInt(req.getParameter("zbid"));
+                Integer cyid=Integer.parseInt(req.getParameter("cyid"));
+                Integer sf=Integer.parseInt(req.getParameter("sf"));
+                if (sf==0){
+                    userService.resetPwd("admin",cyid,zbid);
+                }
+                else if (sf==2){
+                    userService.resetPwd("member",cyid,zbid);
+                }
+                else {
+                    userService.resetPwd("head",cyid,zbid);
+                }
+                resp.sendRedirect("/DangYuan2_war_exploded/PartyModify.jsp");
             }
         }
         if("head".equals(type)){
