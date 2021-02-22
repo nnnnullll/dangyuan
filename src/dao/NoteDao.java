@@ -13,7 +13,7 @@ public class NoteDao {
      //根据对象返回公告列表
      public List<Note> getNoteBydx(Integer dxx) {
         List<Note> notelist=new ArrayList<Note>();
-        String sql = "select * from note where ggid=? order by sj desc";
+        String sql = "select * from note where dx=? order by sj desc";
         PreparedStatement pstmt = DBUtil.getInstance().getPreparedStatement(sql);
         try {
             pstmt.setInt(1, dxx);
