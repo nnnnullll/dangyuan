@@ -12,22 +12,22 @@
     <h3>发布公告（管理员）</h3>
     <div class="mainContent">
       <div class="notebox">
-        <form >
-          <td>
+        <!-- <form > -->
+          <!-- <td> -->
             <div class="notefont">公告标题</div>
-          </td>
-          <td>
+          <!-- </td> -->
+          <!-- <td> -->
               <input class="notetitle" type="text" id="tm" name="tm"/><br/>
-          </td>
-          <td class="notefont">
+          <!-- </td> -->
+          <!-- <td class="notefont"> -->
             <div class="notefont">公告内容</div>
-          </td>
-          <td>
+          <!-- </td> -->
+          <!-- <td> -->
               <textarea class="notetext" name="nr" id="nr" cols="30" rows="10"></textarea><br/>
-          </td>
+          <!-- </td> -->
           <button class="notebutton" onclick="addnote()">立即创建</button>
           <button class="notebutton" onclick="resetForm">重置</button>
-        </form>
+        <!-- </form> -->
       </div>
     </div>
 </div>
