@@ -10,7 +10,7 @@
 <%@include file="frameHead.jsp"%>
 <!-- 下面是修改的页面 -->
 <div class="mainBorder">
-    <h3>党小组成员转出及组员状态变更</h3>
+    <h3>党小组成员转出｜组员状态变更</h3>
         <select style="width: 200px;margin-top: 10px;margin-left: 30px" class="myinput"  id="myselect" onclick="getValue(this.value)" >
             <option value=0>请选择功能</option>
             <option value=1>组员状态变更</option>
