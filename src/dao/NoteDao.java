@@ -37,4 +37,22 @@ public class NoteDao {
         }
         return notelist;
     }
+
+    //添加公告
+	public void addNote(String bt,String nr,String sj,Integer dx) {
+		String sql = "insert into note(bt,nr,sj,dx,sc) values(?,?,?,?,0)";
+		PreparedStatement pstmt = DBUtil.getInstance().getPreparedStatement(sql);
+		try {
+			pstmt.setString(1, bt);
+			pstmt.setString(2, nr);
+			pstmt.setString(3, sj);
+            pstmt.setInt(4, dx);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			DBUtil.getInstance().closeDBResources();
+		}
+	}
 }
