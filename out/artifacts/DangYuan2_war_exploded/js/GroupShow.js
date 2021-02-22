@@ -1,3 +1,4 @@
+
 window.onload=function getGroupInfo() {
      if(window.location.pathname=='/DangYuan2_war_exploded/GroupShow.jsp'){
          var zid=1;
@@ -18,6 +19,9 @@ window.onload=function getGroupInfo() {
          //zbid=localStorage.getItem("zbid");
          zbid=1;
          document.getElementById('zbid').value=zbid;
+         document.getElementById('partyid').value=zbid;
+         document.getElementById('myselect').value=0;
+         document.getElementById('myselect2').value=-1;
      }
 
     console.log(window.location.pathname)
@@ -26,5 +30,21 @@ window.onload=function getGroupInfo() {
 function remind() {
     alert("所属党小组名修改成功！");
 }
-
-
+var mytmp;
+function getValue(val) {
+    // var tmp=document.getElementById("myselect");
+    // var index=tmp.selectedIndex ;
+    // var mytmp=tmp.options[index].value;
+    mytmp = val;
+    if(val==1){
+        document.getElementById('show1').style.display = '';
+        document.getElementById('show2').style.display = 'none';
+    }else if(val==2)
+    {
+        document.getElementById('show2').style.display = '';
+        document.getElementById('show1').style.display = 'none';
+    }
+}
+function myclick(val) {
+    document.getElementById("hidden").value=val;
+}
