@@ -25,6 +25,13 @@ public class UserService {
 //        else if("admin".equals(type))
 //            userDao.updateAdminInfo(id,xm,xb,tx,csrq,jg,sfz,sjh,dyid,sqrq,jjrq,fzrq,ybrq,zsrq,sqs1,sqs2,zys1,zys2);
 //    }
+    public void updateUserInfo(String type, Integer id, String xm, String xb, String tx, String csrq, String jg, String sfz, String sjh, Integer dyid, String sqrq, String jjrq, String fzrq, String ybrq, String zsrq, String sqs1, String sqs2, String zys1, String zys2) {
+        userDao.updateUserInfo(type, id, xm, xb, tx, csrq, jg, sfz, sjh, dyid, sqrq, jjrq, fzrq, ybrq, zsrq, sqs1, sqs2, zys1, zys2);
+    }
+
+    public void changePwd(String type, Integer id, String mm) {
+        userDao.changePwd(type,id,mm);
+    }
 
     public void changeZt(Integer zt,Integer cyid,Integer zbid){
         userDao.changeZt(zt, cyid, zbid);

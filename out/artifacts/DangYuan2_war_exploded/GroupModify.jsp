@@ -17,7 +17,7 @@
             <option value=2>党小组成员转出</option>
         </select>
     <div style="width: 90%;margin-top:20px;margin-left:30px;margin-right:30px;margin-bottom:30px;display: none" id="show1">
-        <form action="userServlet?type=member&way=changeZt" method="post" >
+        <form action="userServlet?type=member&param=changeZt" method="post" >
             <table width="1500px">
                 <tr>
                     <td class="mytext">所属党支部号：</td>
@@ -47,7 +47,7 @@
         </form>
     </div>
     <div id="show2" style="width: 90%;margin-top:20px;margin-left:30px;margin-right:30px;margin-bottom:30px;display: none">
-        <form action="userServlet?type=member&way=addmember" method="post" >
+        <form action="userServlet?type=member&param=addmember" method="post" >
                         <%--    enctype="multipart/form-data"--%>
             <table width="1500px">
                 <tr>
