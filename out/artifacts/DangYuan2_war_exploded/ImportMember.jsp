@@ -9,9 +9,14 @@
 <%@include file="frameHead.jsp"%>
 <!-- 下面是修改的页面 -->
 <div class="mainBorder">
-    <form method="POST" enctype="multipart/form-data" action="ImportServlet" name="ImportMember">
-        选择文件： <input type="file" name="Member"><br>
-        <input type="submit" value="数据入库"/>
+    <form method="POST" enctype="multipart/form-data" action="ImportServlet?param=importMember" name="ImportMember">
+        <h3>党员名单导入</h3>
+       <div>
+           <h4>选择文件<input class="file"  type="file" name="Member"></h4>
+       </div>
+        <td colspan="2">
+            <input  class="mysub"  type="submit" value="导入数据"  />
+        </td>
     </form>
 </div>
 

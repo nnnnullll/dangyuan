@@ -1,5 +1,6 @@
 package dao;
 
+import entity.Groupp;
 import entity.Member;
 import util.DBUtil;
 
@@ -40,5 +41,28 @@ public class ImportDao {
             DBUtil.getInstance().closeDBResources();
         }
         return member;
+    }
+    public Groupp ImportGroup(String zid,String zm,String zbid,String zbsij){
+        String sql = "insert into groupp(zid,zm,zbid,zbsjid) values(?,?,?,?)";
+        PreparedStatement pstmt = DBUtil.getInstance().getPreparedStatement(sql);
+        Groupp groupp=null;
+        try {
+            Integer zid1=Integer.parseInt(zid);
+            Integer zbid1=Integer.parseInt(zbid);
+            Integer zbsij1=Integer.parseInt(zbsij);
+
+            pstmt.setInt(1,zid1);
+            pstmt.setString(2,zm);
+            pstmt.setInt(3,zbid1);
+            pstmt.setInt(4,zbsij1);
+            groupp=new Groupp(zid1,zm,zbid1,zbsij1);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally {
+            DBUtil.getInstance().closeDBResources();
+        }
+        return groupp;
     }
 }
