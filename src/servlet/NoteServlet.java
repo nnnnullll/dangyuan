@@ -1,5 +1,6 @@
 package servlet;
 
+import java.io.Console;
 import java.io.IOException;
 import java.util.List;
 
@@ -19,9 +20,20 @@ public class NoteServlet extends HttpServlet{
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, IOException, ServletException {
         request.setCharacterEncoding("UTF-8");
-        String param = request.getParameter("dxx");
-        List<Note> notelist=noteService.getNoteBydx(Integer.parseInt(request.getParameter("dxx")));
-        request.setAttribute("notelist", notelist);
-        request.getRequestDispatcher("DeleteNote.jsp").forward(request, response); 
+        String param = request.getParameter("param");
+        System.out.println("+");
+        if("add".equals(param)) {
+            System.out.println("++");
+            String bt = request.getParameter("bt");
+            String nr = request.getParameter("nr");
+            String sj = request.getParameter("sj");
+            Integer dx =Integer.parseInt(request.getParameter("dx"));
+            noteService.addNote(bt, nr, sj, dx);
+        }
+        else if("search".equals(param)){
+            List<Note> notelist=noteService.getNoteBydx(Integer.parseInt(request.getParameter("dxx")));
+            request.setAttribute("notelist", notelist);
+            request.getRequestDispatcher("DeleteNote.jsp").forward(request, response); 
+        }
     }   
 }

@@ -10,4 +10,7 @@ public class NoteService {
     public List<Note> getNoteBydx(Integer dxx){
         return noteDao.getNoteBydx(dxx);
     } 
+    public void addNote(String bt,String nr,String sj,Integer dx){
+        noteDao.addNote(bt, nr, sj, dx);
+    }
 }
