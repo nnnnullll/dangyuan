@@ -22,7 +22,7 @@
             <div class="notelist_lan3">公告内容</div>
             <div class="notelist_lan4">删除</div>
           </div>
-          <form action="NoteServlet?dxx=0" method="post"> 
+          <form action="NoteServlet?param=searchbydx&dxx=0" method="post"> 
           
            
             <div class="notelistbox">
@@ -32,7 +32,8 @@
                 <div class="notelistnr_nr">${requestScope.notelist[0].nr}</div>
               </div>
               <div class="notelistsc">
-                <button @click="condeletenote(note.ggh)">删除</button>
+                <!-- <button onclick="deletenote(requestScope.notelist[0].ggid)">删除</button> -->
+                <button onclick="deletenote(1)">删除</button>
               </div>
             </div>
           

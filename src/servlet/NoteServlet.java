@@ -27,6 +27,7 @@ public class NoteServlet extends HttpServlet{
             String sj = request.getParameter("sj");
             Integer dx =Integer.parseInt(request.getParameter("dx"));
             noteService.addNote(bt, nr, sj, dx);
+            request.getRequestDispatcher("DeleteNote.jsp").forward(request, response); 
         }
         else if("searchbydx".equals(param)){
             List<Note> notelist=noteService.getNoteBydx(Integer.parseInt(request.getParameter("dxx")));
