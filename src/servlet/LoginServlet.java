@@ -1,8 +1,6 @@
 package servlet;
 
-import entity.Admin;
-import entity.Head;
-import entity.Member;
+import entity.*;
 import service.LoginService;
 import service.UserService;
 import util.Token;
@@ -13,10 +11,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/loginService")
 public class LoginServlet extends HttpServlet {
     UserService userService = new UserService();
+    LoginService loginService=new LoginService();
 
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String type = req.getParameter("type");
@@ -44,6 +44,16 @@ public class LoginServlet extends HttpServlet {
         if (flag == true) {
             req.getSession().setAttribute("id", id);
             req.getSession().setAttribute("type", type);
+
+            List<Activity> activityList=loginService.getsixActivity();
+            Integer [] act_hdid=new Integer[activityList.size()];
+            for(int i=0;i<activityList.size();i++){
+                act_hdid[i]=activityList.get(i).getHdid();
+            }
+            String[] photoArr=loginService.getsixPhoto(act_hdid);
+            req.getSession().setAttribute("activityList",activityList);
+            req.getSession().setAttribute("photoArr",photoArr);
+
             req.getRequestDispatcher("index.jsp").forward(req, resp);
 
         } else {

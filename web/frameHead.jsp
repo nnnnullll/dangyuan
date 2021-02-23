@@ -6,14 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="zh">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"/>
+<%--    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"/>--%>
 
     <title>计算机学院18级党支部管理系统</title>
 
@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/note.css">
     <link rel="stylesheet" href="css/GroupShow.css">
     <link rel="stylesheet" href="css/PartyShow.css">
+    <link rel="stylesheet" href="css/indexMain.css" />
 </head>
 
 <body>

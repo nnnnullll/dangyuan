@@ -1,13 +1,21 @@
 package service;
 
+import dao.ActivityDao;
+import dao.PhotoDao;
 import dao.UserDao;
+import entity.Activity;
 import entity.Member;
 
-public class LoginService {
-    UserDao memberdao=new UserDao();
+import java.util.List;
 
-    public Member checkMenmer(Integer id,String pwd){
-        Member member=(Member) memberdao.getMemberInfo(id);
-        return member;
+public class LoginService {
+    PhotoDao photodao=new PhotoDao();
+    ActivityDao activitydao=new ActivityDao();
+
+    public List<Activity> getsixActivity(){
+        return activitydao.getsixActivity();
+    }
+    public String[] getsixPhoto(Integer[] act_hdid){
+        return photodao.getsixPhoto(act_hdid);
     }
 }
