@@ -3,7 +3,7 @@
 	bottom: 0;
 	left: 321px;
 	margin-top: 0;
-	position: fixed;
+	position: absolute;
 	top: 70px;
 	transition: all .2s ease-in-out 0s;
 	right: 0;
@@ -22,7 +22,7 @@
 .mainContent {
 	width: 90%;
 	margin: 0 auto;
-	/*border: black 1px solid;*/
+	border: black 1px solid;
 }
 
 
