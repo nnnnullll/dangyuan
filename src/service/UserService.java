@@ -7,12 +7,13 @@ public class UserService {
 
     public Object getUserInfo(String type, Integer id) {
         Object userInfo = null;
-        if ("member".equals(type))
+        if ("member".equals(type)) {
             userInfo = userDao.getMemberInfo(id);
-        else if ("head".equals(type))
+        } else if ("head".equals(type)) {
             userInfo = userDao.getHeadInfo(id);
-        else if ("admin".equals(type))
+        } else if ("admin".equals(type)) {
             userInfo = userDao.getAdminInfo(id);
+        }
         return userInfo;
     }
 
@@ -30,5 +31,22 @@ public class UserService {
 
     public void changePwd(String type, Integer id, String mm) {
         userDao.changePwd(type,id,mm);
+    }
+
+    public void resetPwd(String type, Integer id, Integer mm) {
+        userDao.resetPwd(type,id,mm);
+    }
+
+    public void changeZt(Integer zt,Integer cyid,Integer zbid){
+        userDao.changeZt(zt, cyid, zbid);
+    }
+
+    public void addHead(Integer zid, Integer zzid, Integer zbid) {
+        userDao.addHead(zid, zzid, zbid);
+    }
+
+
+    public void addMember(Integer zid, Integer cyid, Integer zbid) {
+        userDao.addMember(zid, cyid, zbid);
     }
 }

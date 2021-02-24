@@ -13,7 +13,7 @@ public class NoteDao {
      //根据对象返回公告列表
      public List<Note> getNoteBydx(Integer dxx) {
         List<Note> notelist=new ArrayList<Note>();
-        String sql = "select * from note where ggid=? order by sj desc";
+        String sql = "select * from note where dx=? order by sj desc";
         PreparedStatement pstmt = DBUtil.getInstance().getPreparedStatement(sql);
         try {
             pstmt.setInt(1, dxx);
@@ -37,4 +37,37 @@ public class NoteDao {
         }
         return notelist;
     }
+
+    //添加公告
+	public void addNote(String bt,String nr,String sj,Integer dx) {
+		String sql = "insert into note(bt,nr,sj,dx,sc) values(?,?,?,?,0)";
+		PreparedStatement pstmt = DBUtil.getInstance().getPreparedStatement(sql);
+		try {
+			pstmt.setString(1, bt);
+			pstmt.setString(2, nr);
+			pstmt.setString(3, sj);
+            pstmt.setInt(4, dx);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			DBUtil.getInstance().closeDBResources();
+		}
+	}
+
+    //删除公告
+	public void deleteNote(Integer ggid) {
+		String sql = "update note set sc=1 where ggid=?";
+		PreparedStatement pstmt = DBUtil.getInstance().getPreparedStatement(sql);
+		try {
+			pstmt.setInt(1, ggid);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			DBUtil.getInstance().closeDBResources();
+		}
+	}
 }
