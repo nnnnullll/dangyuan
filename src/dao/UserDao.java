@@ -1,13 +1,13 @@
 package dao;
 
-import entity.Admin;
-import entity.Head;
-import entity.Member;
+import entity.*;
 import util.DBUtil;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDao {
     public Object getMemberInfo(Integer id) {
@@ -314,9 +314,110 @@ public class UserDao {
         }finally {
             DBUtil.getInstance().closeDBResources();
         }
-
-
     }
 
+    public Groupp getGroupByZid(Integer zid){
+        Groupp g=null;
+        String sql="select * from `groupp` where zid=?";
+        PreparedStatement pstmt= DBUtil.getInstance().getPreparedStatement(sql);
+        try {
+            pstmt.setInt(1, zid);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                Integer zzid = rs.getInt("zid");
+                String zm = rs.getString("zm");
+                String zbsjim = rs.getString("zbsjim");
 
+                g= new Groupp(zid,zm,zbsjim);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            DBUtil.getInstance().closeDBResources();
+        }
+        return g;
+    }
+
+   public Head getGroupHead(Integer zid){
+       Head h=null;
+       String sql="select * from `head` where zid=?";
+       PreparedStatement pstmt= DBUtil.getInstance().getPreparedStatement(sql);
+       try {
+           pstmt.setInt(1, zid);
+           ResultSet rs = pstmt.executeQuery();
+           if (rs.next()) {
+               Integer zzid = rs.getInt("zzid");
+               String mm = rs.getString("mm");
+               Integer zuid = rs.getInt("zid");
+               Integer zbid = rs.getInt("zbid");
+               String tx = rs.getString("tx");
+               Integer dyid = rs.getInt("dyid");
+               String xm = rs.getString("xm");
+               String sjh = rs.getString("sjh");
+               String sfz = rs.getString("sfz");
+               String xb = rs.getString("xb");
+               String csrq = rs.getString("csrq");
+               String jg = rs.getString("jg");
+               String sqrq = rs.getString("sqrq");
+               String jjrq = rs.getString("jjrq");
+               String fzrq = rs.getString("fzrq");
+               String ybrq = rs.getString("ybrq");
+               String zsrq = rs.getString("zsrq");
+               Integer zt = rs.getInt("zt");
+               String sqs1 = rs.getString("sqs1");
+               String sqs2 = rs.getString("sqs2");
+               String zys1 = rs.getString("zys1");
+               String zys2 = rs.getString("zys1");
+
+               h= new Head(zzid, mm, zid, zbid, tx, dyid, xm, sjh, sfz, xb, csrq, jg, sqrq, jjrq, fzrq, ybrq, zsrq, zt, sqs1, sqs2, zys1, zys2);
+           }
+       } catch (SQLException throwables) {
+           throwables.printStackTrace();
+       } finally {
+           DBUtil.getInstance().closeDBResources();
+       }
+       return h;
+   }
+
+    public List<Member> getMemberByZid(Integer zid){
+        List<Member> memberList=new ArrayList<Member>();
+        String sql="select * from `member` where zbid=?";
+        PreparedStatement pstmt= DBUtil.getInstance().getPreparedStatement(sql);
+        try {
+            pstmt.setInt(1, zid);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                Integer cyid = rs.getInt("cyid");
+                String mm = rs.getString("mm");
+                Integer zzid = rs.getInt("zid");
+                Integer zbid = rs.getInt("zbid");
+                String tx=rs.getString("tx");
+                Integer dyid = rs.getInt("dyid");
+                String xm = rs.getString("xm");
+                String sjh = rs.getString("sjh");
+                String sfz = rs.getString("sfz");
+                String xb = rs.getString("xb");
+                String csrq = rs.getString("csrq");
+                String jg = rs.getString("jg");
+                String sqrq = rs.getString("sqrq");
+                String jjrq = rs.getString("jjrq");
+                String fzrq = rs.getString("fzrq");
+                String ybrq = rs.getString("ybrq");
+                String zsrq = rs.getString("zsrq");
+                Integer zt = rs.getInt("zt");
+                String sqs1 = rs.getString("sqs1");
+                String sqs2 = rs.getString("sqs2");
+                String zys1 = rs.getString("zys1");
+                String zys2 = rs.getString("zys1");
+
+                Member m= new Member(cyid, mm, zzid, zbid, tx, dyid, xm, sjh, sfz, xb, csrq, jg, sqrq, jjrq, fzrq, ybrq, zsrq, zt, sqs1, sqs2, zys1, zys2);
+                memberList.add(m);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            DBUtil.getInstance().closeDBResources();
+        }
+        return memberList;
+    }
 }

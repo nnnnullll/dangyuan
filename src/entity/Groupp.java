@@ -8,6 +8,11 @@ public class Groupp {
     String zbsjm;
     String zbm;
 
+    public Groupp(Integer zid, String zm, String zbm) {
+        this.zid = zid;
+        this.zm = zm;
+        this.zbm = zbm;
+    }
 
     public Groupp(Integer zid, Integer zbid, Integer zbsjid, String zm, String zbsjm, String zbm) {
         this.zid = zid;

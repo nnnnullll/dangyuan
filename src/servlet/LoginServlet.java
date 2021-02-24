@@ -10,13 +10,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
 @WebServlet("/loginService")
 public class LoginServlet extends HttpServlet {
     UserService userService = new UserService();
-    LoginService loginService=new LoginService();
+    LoginService loginService = new LoginService();
 
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String type = req.getParameter("type");
@@ -29,40 +30,39 @@ public class LoginServlet extends HttpServlet {
                 Member member = (Member) userService.getUserInfo("member", id);
                 if ((member != null && member.getMm().equals(pwd)))
                     flag = true;
+            } else if ("head".equals(type)) {
+                Head head = (Head) userService.getUserInfo("head", id);
+                if (head != null & head.getMm().equals(pwd)) {
+                    flag = true;
+                }
+            } else {
+                Admin admin = (Admin) userService.getUserInfo("admin", id);
+                if (admin != null & admin.getMm().equals(pwd)) {
+                    flag = true;
+                }
             }
-        } else if ("head".equals(type)) {
-            Head head = (Head) userService.getUserInfo("head", id);
-            if (head != null & head.getMm().equals(pwd)) {
-                flag = true;
-            }
-        } else {
-            Admin admin = (Admin) userService.getUserInfo("admin", id);
-            if (admin != null & admin.getMm().equals(pwd)) {
-                flag = true;
-            }
-        }
-        if (flag == true) {
-            req.getSession().setAttribute("id", id);
-            req.getSession().setAttribute("type", type);
+            if (flag == true) {
+                HttpSession session=req.getSession();
+                session.setAttribute("id", id);
+                session.setAttribute("type", type);
 
-            List<Activity> activityList=loginService.getsixActivity();
-            Integer [] act_hdid=new Integer[activityList.size()];
-            for(int i=0;i<activityList.size();i++){
-                act_hdid[i]=activityList.get(i).getHdid();
+                List<Activity> activityList = loginService.getsixActivity();
+                Integer[] act_hdid = new Integer[activityList.size()];
+                for (int i = 0; i < activityList.size(); i++) {
+                    act_hdid[i] = activityList.get(i).getHdid();
+                }
+                String[] photoArr = loginService.getsixPhoto(act_hdid);
+                session.setAttribute("activityList", activityList);
+                session.setAttribute("photoArr", photoArr);
+                resp.sendRedirect("index.jsp");
+
+            } else {
+                req.setAttribute("error", "用户名、密码或类型不匹配，请重新登陆！");
+                req.getRequestDispatcher("login.jsp").forward(req, resp);
             }
-            String[] photoArr=loginService.getsixPhoto(act_hdid);
-            req.getSession().setAttribute("activityList",activityList);
-            req.getSession().setAttribute("photoArr",photoArr);
 
-            req.getRequestDispatcher("index.jsp").forward(req, resp);
-
-        } else {
-            req.setAttribute("error", "用户名、密码或类型不匹配，请重新登陆！");
-            req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
     }
-
-
 }
 
 

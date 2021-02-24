@@ -11,4 +11,5 @@ public class PartyService {
     public void updateParty(Integer zbid,Integer zbsjid){
         myPartyDao.updateParty(zbid,zbsjid);
     }
+
 }

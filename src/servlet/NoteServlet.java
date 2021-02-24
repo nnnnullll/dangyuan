@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import entity.Note;
 import service.NoteService;
@@ -38,7 +39,11 @@ public class NoteServlet extends HttpServlet{
             Integer ggid =Integer.parseInt(request.getParameter("ggid"));
             noteService.deleteNote(ggid);
         }else if("all".equals(param)){
-            String type=request.getParameter("type");
+            String type = null;
+            HttpSession session = request.getSession(false);
+            if (session != null) {
+                type = (String) session.getAttribute("type");
+            }
 
             List<Note> notelist=noteService.getAllByType(type);
             request.setAttribute("notelist", notelist);

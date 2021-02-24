@@ -139,7 +139,7 @@
             <div class="form-item">
                 <p>登陆类型</p>
                 <select class="input-item" name="type">
-                    <option type="radio"  value="member" selected="selected"/>
+                    <option type="radio"  value="member"/>
                     成员
                     <option type="radio" value="head"/>
                     组长
@@ -175,11 +175,6 @@
         document.getElementById("type").innerText = "成员"
         alert("reset")
     }
-    sessionStorage.setItem("id",id);
-    sessionStorage.setItem("type",type);
-    localStorage.setItem("id",id);
-    localStorage.setItem("type",type);
-
 </script>
 </body>
 </html>

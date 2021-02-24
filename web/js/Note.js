@@ -15,6 +15,4 @@ function deletenote(e){
     window.location.href = "NoteServlet?param=delete&ggid="+e;
     window.history.back(-1)
 }
-function jumptoNoteServlet() {
-    window.location.href="NoteServlet?param=all&type="+sessionStorage.getItem("type");
-}
+

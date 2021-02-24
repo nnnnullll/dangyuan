@@ -30,9 +30,14 @@
     <link rel="stylesheet" href="css/GroupShow.css">
     <link rel="stylesheet" href="css/PartyShow.css">
     <link rel="stylesheet" href="css/indexMain.css" />
+    <link rel="stylesheet" href="css/showMember.css"/>
 </head>
 
 <body>
+<div hidden>
+    <div id="id">${sessionScope.id}</div>
+    <div id="type">${sessionScope.type}</div>
+</div>
 <div id="page-wraper">
     <div id="head">
         <h1>上海大学18级党支部管理系统</h1>
@@ -46,9 +51,10 @@
                     <li class="active"><a href="index.jsp"><span>首页</span></a>
                     </li>
                     <li><a href="Activity.jsp"><span>活动展示</span></a></li>
-                    <li><a href="javascript:jumptoNoteServlet()"><span>查看公告</span></a></li>
+                    <li><a href="NoteServlet?param=all"><span>查看公告</span></a></li>
                     <li class="submenu"><a href="#"><span>党小组</span><span class="menu-arrow"></span></a>
                         <ul>
+                            <li><a href="MemberServlet?method=Group">查看小组</a></li>
                             <li><a href="GroupShow.jsp">(公共的)小组信息</a></li>
                             <li><a href="GroupModify.jsp">（组长）成员管理</a></li>
                             <li><a href="DeleteNote.jsp">（组长）删除公告</a></li>
@@ -56,8 +62,9 @@
                             <li><a href="PushActivity.jsp">（公共看组长发布）活动记录</a></li>
                         </ul>
                     </li>
-                    <li class="submenu"><a href="#"><span>党支部</span><span class="menu-arrow"></span></a>
+                    <li class="submenu"><a href="MemberServlet?method=Branch"><span>党支部</span><span class="menu-arrow"></span></a>
                         <ul>
+                            <li><a href="MemberServlet?method=Branch">查看支部</a></li>
                             <li><a href="ImportList.jsp">（管理员）导入名单</a></li>
                             <li><a href="ImportGroupLeader.jsp">（管理员）党小组导入</a></li>
                             <li><a href="PartyModify.jsp">(管理员)成员管理</a></li>

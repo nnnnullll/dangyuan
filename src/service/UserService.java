@@ -1,9 +1,15 @@
 package service;
 
+import dao.GroupInfoDao;
 import dao.UserDao;
+import entity.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserService {
     UserDao userDao = new UserDao();
+    GroupInfoDao groupinfodao=new GroupInfoDao();
 
     public Object getUserInfo(String type, Integer id) {
         Object userInfo = null;
@@ -49,4 +55,34 @@ public class UserService {
     public void addMember(Integer zid, Integer cyid, Integer zbid) {
         userDao.addMember(zid, cyid, zbid);
     }
+
+    public Groupp getGroupByZid(Integer zid){
+        return userDao.getGroupByZid(zid);
+    }
+    public Head getGroupHead(Integer zid){
+        return userDao.getGroupHead(zid);
+    }
+    public List<Member> getMemberByZid(Integer zid){
+        return userDao.getMemberByZid(zid);
+    }
+
+    public List<GroupAll> getGroupAllByZbsjid(Integer zbsjid){
+        List<GroupAll> groupAllList=new ArrayList<GroupAll>();
+        List<GroupInfo> groupInfoList=groupinfodao.getGroupInfoByZbsjid(zbsjid);
+        Head head=null;
+        List<Member> memberList=null;
+        if(groupInfoList!=null){
+            for(int i=0;i<groupInfoList.size();i++){
+                head=userDao.getGroupHead(groupInfoList.get(i).getZid());
+                memberList=userDao.getMemberByZid(groupInfoList.get(i).getZid());
+                GroupAll g=new GroupAll(groupInfoList.get(i),head,memberList);
+                groupAllList.add(g);
+            }
+        }else {
+            groupAllList=null;
+        }
+        return groupAllList;
+    }
+
+
 }
