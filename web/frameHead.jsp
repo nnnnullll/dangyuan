@@ -46,7 +46,7 @@
                     <li class="active"><a href="index.jsp"><span>首页</span></a>
                     </li>
                     <li><a href="Activity.jsp"><span>活动展示</span></a></li>
-                    <li><a href="Note.jsp"><span>查看公告</span></a></li>
+                    <li><a href="javascript:jumptoNoteServlet()"><span>查看公告</span></a></li>
                     <li class="submenu"><a href="#"><span>党小组</span><span class="menu-arrow"></span></a>
                         <ul>
                             <li><a href="GroupShow.jsp">(公共的)小组信息</a></li>
@@ -78,5 +78,4 @@
             </div>
         </div>
     </div><!-- /Sidebar -->
-
 </div>

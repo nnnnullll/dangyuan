@@ -1,16 +1,18 @@
 /* 发布页面 */
 .notebox{
     font-size: 16px;
+    width: 100%;
 }
 .notefont{
     color: #a23e48;
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 10px;
     font-weight: 700;
 }
 .notetitle{
     height: 50px;
-    width: 1000px;
+    width: 100%;
+    font-size: 16px;
     margin-bottom: 30px;
     color: #606266;
     padding: 0px 15px;
@@ -20,7 +22,7 @@
 }
 .notetext{
     height: 300px;
-    width: 1000px;
+    width: 100%;
     margin-bottom: 30px;
     color: #606266;
     padding: 15px 15px;
@@ -34,25 +36,25 @@
 }
 /* 删除页面 */
 .rightmainbox{
-    width: 100%;
+    width: 1225px;
     height: 688px;
     overflow: auto;
-  }
-  .notelist_title{
-    width: 100%;
+}
+.notelist_title{
+    width: 1124px;
     height: 40px;
     margin-top: 20px;
     background-color:#a23e48;
-  }
-  .notelist_title_text{
+}
+.notelist_title_text{
     width: 120px;
     height: 20px;
     color: white;
     font-size: 20px;
     padding: 10px;
     font-weight: 700;
-  }
-  .notelist_lan{
+}
+.notelist_lan{
     width: 1124px;
     height: 40px;
     font-size: 20px;
@@ -60,39 +62,39 @@
     display: flex;
     flex-direction: row;
     border-bottom: #C6CACE solid 1px;
-  }
-  .notelist_lan1{
+}
+.notelist_lan1{
     width: 240px;
     height: 40px;
     text-align: center;
     line-height: 40px;
     border-left: #C6CACE solid 1px;
     border-right: #C6CACE solid 1px;
-  }
-  .notelist_lan3{
+}
+.notelist_lan3{
     width: 964px;
     height: 40px;
     line-height: 40px;
     text-align: center;
     border-left: #C6CACE solid 1px;
     border-right:#C6CACE solid 1px;
-  }
-  .notelist_lan4{
+}
+.notelist_lan4{
     width: 100px;
     height: 40px;
     line-height: 40px;
     text-align: center;
     border-right:#C6CACE solid 1px;
-  }
-  .notelistbox{
+}
+.notelistbox{
     display: flex;
     flex-direction: row;
     width: 1124px;
     min-height: 40px;
     font-size: 18px;
     border-bottom: #C6CACE solid 1px;
-  }
-  .notelistrq{
+}
+.notelistrq{
     width: 240px;
     min-height: 40px;
     display: table-cell;
@@ -100,15 +102,15 @@
     line-height: 40px;
     border-left: #C6CACE solid 1px;
     border-right: #C6CACE solid 1px;
-  }
-  .notelistdx{
+}
+.notelistdx{
     width: 120px;
     min-height: 40px;
     line-height: 40px;
     text-align: center;
     vertical-align: middle;
-  }
-  .notelistnr{
+}
+.notelistnr{
     width: 964px;
     min-height: 40px;
     text-align:left;
@@ -117,19 +119,47 @@
     border-right:#C6CACE solid 1px;
     display: flex;
     flex-direction: column;
-  }
-  .notelistnr_bt{
+}
+.notelistnr_bt{
     font-weight: 700;
-     line-height: 40px;
-  }
-  .notelistnr_nr{
+    line-height: 40px;
+}
+.notelistnr_nr{
     line-height: 30px;
-  }
-  .notelistsc{
+}
+.notelistsc{
     width: 100px;
     min-height: 40px;
     line-height: 40px;
     text-align: center;
     vertical-align: middle;
     border-right:#C6CACE solid 1px;
-  }
+}
+/*展示公告*/
+#showNote{
+    width:100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+}
+#showNote thead{
+    font-size: 20px;
+    line-height: 40px;
+    height: 40px;
+    font-weight: 700;
+    background-color: #a23e48;
+    color: #fff;
+    /* border: ##a23e48 1px solid; */
+}
+#showNote thead td{
+    border: 1px solid #232323;
+}
+#showNote tbody{
+    font-size: 16px;
+    line-height: 30px;
+    height: 30px;
+    color: #232323;
+}
+#showNote tbody td{
+    border: 1px solid #232323;
+}

@@ -142,7 +142,7 @@
                     <option type="radio"  value="member" selected="selected"/>
                     成员
                     <option type="radio" value="head"/>
-                    小组长
+                    组长
                     <option type="radio" value="admin"/>
                     管理员
                 </select>
@@ -177,6 +177,9 @@
     }
     sessionStorage.setItem("id",id);
     sessionStorage.setItem("type",type);
+    localStorage.setItem("id",id);
+    localStorage.setItem("type",type);
+
 </script>
 </body>
 </html>

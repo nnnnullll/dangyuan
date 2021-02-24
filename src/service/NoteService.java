@@ -9,7 +9,7 @@ public class NoteService {
     NoteDao noteDao=new NoteDao();
     public List<Note> getNoteBydx(Integer dxx){
         return noteDao.getNoteBydx(dxx);
-    } 
+    }
     public void addNote(String bt,String nr,String sj,Integer dx){
         noteDao.addNote(bt, nr, sj, dx);
     }
@@ -17,4 +17,12 @@ public class NoteService {
     public void deleteNote(Integer ggid){
         noteDao.deleteNote(ggid);
     }
+    public List<Note> getAllByType(String type){
+        if("member".equals(type)){
+            return noteDao.getMemberNote();
+        }else{
+            return noteDao.getAllNote();
+        }
+    }
+
 }
