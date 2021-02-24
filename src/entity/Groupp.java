@@ -17,6 +17,12 @@ public class Groupp {
         this.zbsjm = zbsjm;
         this.zbm = zbm;
     }
+    public  Groupp(Integer zid,String zm,Integer zbid,Integer zbsjid){
+        this.zid = zid;
+        this.zbid = zbid;
+        this.zbsjid = zbsjid;
+        this.zm = zm;
+    }
 
     public String getZbm() {
         return zbm;
