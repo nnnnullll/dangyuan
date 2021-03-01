@@ -28,16 +28,15 @@ public class NoteServlet extends HttpServlet{
             String sj = request.getParameter("sj");
             Integer dx =Integer.parseInt(request.getParameter("dx"));
             noteService.addNote(bt, nr, sj, dx);
-            request.getRequestDispatcher("DeleteNote.jsp").forward(request, response);
+            request.getRequestDispatcher("PushNote.jsp").forward(request, response);
+
         }
-        else if("searchbydx".equals(param)){
-            List<Note> notelist=noteService.getNoteBydx(Integer.parseInt(request.getParameter("dxx")));
-            request.setAttribute("notelist", notelist);
-            request.getRequestDispatcher("DeleteNote.jsp").forward(request, response);
-        }
+
         else if("delete".equals(param)){
             Integer ggid =Integer.parseInt(request.getParameter("ggid"));
             noteService.deleteNote(ggid);
+            response.sendRedirect("NoteServlet?param=alll");
+
         }else if("all".equals(param)){
             String type = null;
             HttpSession session = request.getSession(false);
@@ -48,6 +47,16 @@ public class NoteServlet extends HttpServlet{
             List<Note> notelist=noteService.getAllByType(type);
             request.setAttribute("notelist", notelist);
             request.getRequestDispatcher("Note.jsp").forward(request, response);
+        }else if("alll".equals(param)){
+            String type = null;
+            HttpSession session = request.getSession(false);
+            if (session != null) {
+                type = (String) session.getAttribute("type");
+            }
+
+            List<Note> notelist=noteService.getAllByType(type);
+            request.setAttribute("notelist", notelist);
+            request.getRequestDispatcher("DeleteNote.jsp").forward(request, response);
         }
     }
 }
