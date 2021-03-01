@@ -65,7 +65,7 @@
                     <li class="submenu"><a href="MemberServlet?method=Branch"><span>党支部</span><span class="menu-arrow"></span></a>
                         <ul>
                             <li><a href="MemberServlet?method=Branch">查看支部</a></li>
-                            <li><a href="ImportList.jsp">（管理员）导入名单</a></li>
+                            <li><a href="ImportMember.jsp">（管理员）导入名单</a></li>
                             <li><a href="ImportGroupLeader.jsp">（管理员）党小组导入</a></li>
                             <li><a href="PartyModify.jsp">(管理员)成员管理</a></li>
                             <li><a href="PartyShow.jsp">(公共的)支部信息</a></li>
