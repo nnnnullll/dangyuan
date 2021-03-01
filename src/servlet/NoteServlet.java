@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import entity.Note;
 import service.NoteService;
@@ -27,16 +28,26 @@ public class NoteServlet extends HttpServlet{
             String sj = request.getParameter("sj");
             Integer dx =Integer.parseInt(request.getParameter("dx"));
             noteService.addNote(bt, nr, sj, dx);
-            request.getRequestDispatcher("DeleteNote.jsp").forward(request, response); 
+            request.getRequestDispatcher("DeleteNote.jsp").forward(request, response);
         }
         else if("searchbydx".equals(param)){
             List<Note> notelist=noteService.getNoteBydx(Integer.parseInt(request.getParameter("dxx")));
             request.setAttribute("notelist", notelist);
-            request.getRequestDispatcher("DeleteNote.jsp").forward(request, response); 
+            request.getRequestDispatcher("DeleteNote.jsp").forward(request, response);
         }
         else if("delete".equals(param)){
             Integer ggid =Integer.parseInt(request.getParameter("ggid"));
             noteService.deleteNote(ggid);
+        }else if("all".equals(param)){
+            String type = null;
+            HttpSession session = request.getSession(false);
+            if (session != null) {
+                type = (String) session.getAttribute("type");
+            }
+
+            List<Note> notelist=noteService.getAllByType(type);
+            request.setAttribute("notelist", notelist);
+            request.getRequestDispatcher("Note.jsp").forward(request, response);
         }
-    }   
+    }
 }

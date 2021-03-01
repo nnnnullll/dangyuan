@@ -8,6 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 </div>
+<div hidden>
+    <div id="sessionStorage_id">${sessionScope.id}</div>
+    <div id="sessionStorage_type">${sessionScope.type}</div>
+</div>
 
 <!-- Scripts -->
 <script src="js/GroupShow.js"></script>
@@ -23,5 +27,13 @@
 <script src="js/popper.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/Note.js"></script>
+<script src="js/myfunction.js"></script>
+<script type="text/javascript" language="JavaScript">
+    let id=document.getElementById("sessionStorage_id").innerText;
+    let type=document.getElementById("sessionStorage_type").innerText;
+    sessionStorage.setItem("id",id);
+    sessionStorage.setItem("type",type);
+</script>
+
 </body>
 </html>
