@@ -7,8 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html lang="zh">
+<html lang="zh"  >
 <head>
+
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
@@ -57,7 +58,7 @@
                             <li><a href="MemberServlet?method=Group">查看小组</a></li>
                             <li><a href="GroupShow.jsp">(公共的)小组信息</a></li>
                             <li><a href="GroupModify.jsp">（组长）成员管理</a></li>
-                            <li><a href="DeleteNote.jsp">（组长）删除公告</a></li>
+                            <li><a href="NoteServlet?param=alll">（组长）删除公告</a></li>
                             <li><a href="PushNote.jsp">（公共看组长发布）公告</a></li>
                             <li><a href="PushActivity.jsp">（公共看组长发布）活动记录</a></li>
                         </ul>
@@ -66,8 +67,6 @@
                         <ul>
                             <li><a href="MemberServlet?method=Branch">查看支部</a></li>
                             <li><a href="ImportMember.jsp">（管理员）导入名单</a></li>
-                            <li><a href="MemberServlet?method=Branch">查看支部</a></li>
-                            <li><a href="ImportList.jsp">（管理员）导入名单</a></li>
                             <li><a href="ImportGroupLeader.jsp">（管理员）党小组导入</a></li>
                             <li><a href="PartyModify.jsp">(管理员)成员管理</a></li>
                             <li><a href="PartyShow.jsp">(公共的)支部信息</a></li>

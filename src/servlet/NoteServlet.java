@@ -56,6 +56,7 @@ public class NoteServlet extends HttpServlet{
 
             List<Note> notelist=noteService.getAllByType(type);
             request.setAttribute("notelist", notelist);
+            response.setContentType("text/html;charset=utf-8");
             request.getRequestDispatcher("DeleteNote.jsp").forward(request, response);
         }
     }
