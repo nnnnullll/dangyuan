@@ -5,84 +5,9 @@
   Time: 22:18
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"/>
-
-    <title>计算机学院18级党支部管理系统</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="css/fontawesome.css"/>
-    <link rel="stylesheet" href="css/templatemo-style.css"/>
-    <link rel="stylesheet" href="css/owl.css"/>
-    <link rel="stylesheet" href="css/lightbox.css"/>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/note.css">
-    <script>
-        function assure(){
-            alert("确认修改？");
-        }
-    </script>
-</head>
-
-<body>
-<div id="page-wraper">
-    <div id="head">
-        <h1>上海大学18级党支部管理系统</h1>
-        <button>退出</button>
-    </div>
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-inner slimscroll">
-            <div id="sidebar-menu" class="sidebar-menu">
-                <ul>
-                    <li class="active"><a href="index.jsp"><span>首页</span></a>
-                    </li>
-                    <li><a href="Activity.jsp"><span>活动展示</span></a></li>
-                    <li><a href="Note.jsp"><span>查看公告</span></a></li>
-                    <li class="submenu"><a href="#"><span>党小组</span><span class="menu-arrow"></span></a>
-                        <ul>
-                            <li><a href="GroupShow.jsp">(公共的)小组信息</a></li>
-                            <li><a href="GroupModify.jsp">（组长）成员管理</a></li>
-                            <li><a href="DeleteNote.jsp">（组长）删除公告</a></li>
-                            <li><a href="PushNote.jsp">（公共看组长发布）公告</a></li>
-                            <li><a href="PushActivity.jsp">（公共看组长发布）活动记录</a></li>
-                        </ul>
-                    </li>
-                    <li class="submenu"><a href="#"><span>党支部</span><span class="menu-arrow"></span></a>
-                        <ul>
-                            <li><a href="ImportList.jsp">（管理员）导入名单</a></li>
-                            <li><a href="ImportGroupLeader.jsp">（管理员）党小组导入</a></li>
-                            <li><a href="PartyModify.jsp">(管理员)成员管理</a></li>
-                            <li><a href="MemberList.jsp">(公共的)支部信息</a></li>
-                            <li><a href="PushNote.jsp">(管理员)发布公告</a></li>
-                            <li><a href="DeleteNote.jsp">(管理员)删除公告</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="userServlet?param=info&type=member&id=1"><span>个人信息</span></a></li>
-                    <li class="submenu"><a href="#"><span>Contact Me</span><span class="menu-arrow"></span></a>
-                        <ul>
-                            <li><a href="#">Student List</a></li>
-                            <li><a href="#">Student View</a></li>
-                            <li><a href="#">Student Add</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div><!-- /Sidebar -->
-
-</div>
-
+<%@include file="frameHead.jsp"%>
 <div class="mainBorder">
     <h3>修改个人信息</h3>
 <%--    <div class="mainContent">--%>
@@ -90,7 +15,7 @@
 <%--    </div>--%>
     <div class="mainContent">
         <form action="userServlet?param=ModifyPwd&type=member&id=1" method="post" >
-            <table width="800" border="1" align="center">
+            <table width="800" border="1" align="center" class="table">
                 <tr>
                     <td>密码：</td>
                     <td><input type="text" id="mm" name="mm" placeholder="新密码"/></td>
@@ -103,7 +28,7 @@
             </table>
         </form>
 
-        <form action="userServlet?param=doModify&type=member&id=1" method="post" >
+        <form action="userServlet?param=doModify&type=member&id=1" method="post" class="table">
             <%--    enctype="multipart/form-data"--%>
             <table width="800" border="1" align="center">
                 <tr>
@@ -159,19 +84,4 @@
     </div>
 </div>
 
-</div>
-
-<!-- Scripts -->
-<!-- Bootstrap core JavaScript -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/node.js"></script>
-<script src="js/isotope.min.js"></script>
-<script src="js/owl-carousel.js"></script>
-<script src="js/lightbox.js"></script>
-<script src="js/custom.js"></script>
-<script src="js/jquery-3.5.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/script.js"></script>
-</body>
-</html>
+<%@include file="frameFoot.jsp"%>

@@ -35,18 +35,18 @@
     font-size: 16px;
 }
 /* 删除页面 */
-.rightmainbox{
-    width: 1225px;
+#rightmainbox{
+    width: 1020px;
     height: 688px;
     overflow: auto;
 }
-.notelist_title{
-    width: 1124px;
+#notelist_title{
+    width: 1020px;
     height: 40px;
     margin-top: 20px;
     background-color:#a23e48;
 }
-.notelist_title_text{
+#notelist_title_text{
     width: 120px;
     height: 20px;
     color: white;
@@ -54,8 +54,8 @@
     padding: 10px;
     font-weight: 700;
 }
-.notelist_lan{
-    width: 1124px;
+#notelist_lan{
+    width: 1020px;
     height: 40px;
     font-size: 20px;
     font-weight: 700;
@@ -63,39 +63,39 @@
     flex-direction: row;
     border-bottom: #C6CACE solid 1px;
 }
-.notelist_lan1{
-    width: 240px;
+#notelist_lan1{
+    width: 150px;
     height: 40px;
     text-align: center;
     line-height: 40px;
     border-left: #C6CACE solid 1px;
     border-right: #C6CACE solid 1px;
 }
-.notelist_lan3{
-    width: 964px;
+#notelist_lan3{
+    width: 750px;
     height: 40px;
     line-height: 40px;
     text-align: center;
     border-left: #C6CACE solid 1px;
     border-right:#C6CACE solid 1px;
 }
-.notelist_lan4{
-    width: 100px;
+#notelist_lan4{
+    width: 120px;
     height: 40px;
     line-height: 40px;
     text-align: center;
     border-right:#C6CACE solid 1px;
 }
-.notelistbox{
+#notelistbox{
     display: flex;
     flex-direction: row;
-    width: 1124px;
+    width: 1020px;
     min-height: 40px;
     font-size: 18px;
     border-bottom: #C6CACE solid 1px;
 }
-.notelistrq{
-    width: 240px;
+#notelistrq{
+    width: 150px;
     min-height: 40px;
     display: table-cell;
     text-align: center;
@@ -103,15 +103,8 @@
     border-left: #C6CACE solid 1px;
     border-right: #C6CACE solid 1px;
 }
-.notelistdx{
-    width: 120px;
-    min-height: 40px;
-    line-height: 40px;
-    text-align: center;
-    vertical-align: middle;
-}
-.notelistnr{
-    width: 964px;
+#notelistnr{
+    width: 750px;
     min-height: 40px;
     text-align:left;
     vertical-align: middle;
@@ -120,15 +113,15 @@
     display: flex;
     flex-direction: column;
 }
-.notelistnr_bt{
+#notelistnr_bt{
     font-weight: 700;
     line-height: 40px;
 }
-.notelistnr_nr{
+#notelistnr_nr{
     line-height: 30px;
 }
-.notelistsc{
-    width: 100px;
+#notelistsc{
+    width: 120px;
     min-height: 40px;
     line-height: 40px;
     text-align: center;
