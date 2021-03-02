@@ -47,7 +47,7 @@ public class MemberServlet extends HttpServlet {
                     Head zuyuan = (Head) userservice.getUserInfo(type, id);
                     zid = zuyuan.getZid();
                 }
-                Groupp g = userservice.getGroupByZid(zid);
+                String[] g = userservice.getGroupByZid(zid);
                 Head h = userservice.getGroupHead(zid);
                 List<Member> memberList = userservice.getMemberByZid(zid);
                 request.setAttribute("Groupp", g);

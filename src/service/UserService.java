@@ -56,7 +56,7 @@ public class UserService {
         userDao.addMember(zid, cyid, zbid);
     }
 
-    public Groupp getGroupByZid(Integer zid){
+    public String[] getGroupByZid(Integer zid){
         return userDao.getGroupByZid(zid);
     }
     public Head getGroupHead(Integer zid){

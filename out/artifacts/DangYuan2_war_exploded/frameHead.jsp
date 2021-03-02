@@ -41,16 +41,14 @@
 <div id="page-wraper">
     <div id="head">
         <h1>上海大学18级党支部管理系统</h1>
-        <button>退出</button>
+        <a style="color: #fff" href="loginService?param=logout">退出</a>
     </div>
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar-inner slimscroll">
             <div id="sidebar-menu" class="sidebar-menu">
                 <ul>
-                    <li class="active"><a href="index.jsp"><span>首页</span></a>
-                    </li>
-                    <li><a href="Activity.jsp"><span>活动展示</span></a></li>
+                    <li class="active"><a href="index.jsp"><span>首页</span></a></li>
                     <li><a href="NoteServlet?param=all"><span>查看公告</span></a></li>
                     <li class="submenu"><a href="#"><span>党小组</span><span class="menu-arrow"></span></a>
                         <ul>

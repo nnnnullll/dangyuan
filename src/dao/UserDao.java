@@ -316,19 +316,18 @@ public class UserDao {
         }
     }
 
-    public Groupp getGroupByZid(Integer zid){
-        Groupp g=null;
-        String sql="select * from `groupp` where zid=?";
+    public String[] getGroupByZid(Integer zid){
+        String[] g=new String[2];
+        String sql="select groupp.zm zm,admin.xm zbsjm from admin,groupp where groupp.zbsjid=glyid and groupp.zid=?";
         PreparedStatement pstmt= DBUtil.getInstance().getPreparedStatement(sql);
         try {
             pstmt.setInt(1, zid);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
-                Integer zzid = rs.getInt("zid");
-                String zm = rs.getString("zm");
-                String zbsjim = rs.getString("zbsjim");
-
-                g= new Groupp(zid,zm,zbsjim);
+                g[0]= rs.getString("zm");
+                g[1] = rs.getString("zbsjm");
+                System.out.println(g[0]);
+                System.out.println(g[1]);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

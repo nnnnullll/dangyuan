@@ -11,10 +11,26 @@
 <div class="mainBorder">
     <h3>党小组成员</h3>
     <div class="mainContent">
-        <div class="GroupName">
-            党小组: ${Groupp.zm} - 支部书记: ${Groupp.zbsjm}
+        <div class="GroupName" >
+            党小组: ${Groupp[0]} - 支部书记: ${Groupp[1]}
         </div>
         <table class="showMember">
+            <tr class="GroupMember">
+                <td>角色</td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>手机号</td>
+                <td>出生日期</td>
+                <td>身份证</td>
+            </tr>
+            <tr class="GroupMember" style="margin-bottom: 2px">
+                <td>籍贯</td>
+                <td>申请人日期</td>
+                <td>积极分子日期</td>
+                <td>发展对象日期</td>
+                <td>预备党员日期</td>
+                <td>当前状态</td>
+            </tr>
             <tr class="GroupMember">
                 <td>组长</td>
                 <td>${Head.xm}</td>

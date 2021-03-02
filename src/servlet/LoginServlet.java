@@ -21,11 +21,16 @@ public class LoginServlet extends HttpServlet {
 
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String type = req.getParameter("type");
-        Integer id = Integer.parseInt(req.getParameter("id"));
-        String pwd = req.getParameter("pwd");
-        Boolean flag = false;
-
+        String param = req.getParameter("param");
+        if ("logout".equals(param)) {
+            req.getSession().removeAttribute("id");
+            req.getSession().removeAttribute("type");
+            resp.sendRedirect("login.jsp");
+        }
         if (Token.isTokenStringValid(req.getParameter(Token.TOKEN_STRING_NAME), req.getSession())) {
+            Integer id = Integer.parseInt(req.getParameter("id"));
+            String pwd = req.getParameter("pwd");
+            Boolean flag = false;
             if ("member".equals(type)) {
                 Member member = (Member) userService.getUserInfo("member", id);
                 if ((member != null && member.getMm().equals(pwd)))
@@ -42,7 +47,7 @@ public class LoginServlet extends HttpServlet {
                 }
             }
             if (flag == true) {
-                HttpSession session=req.getSession();
+                HttpSession session = req.getSession();
                 session.setAttribute("id", id);
                 session.setAttribute("type", type);
 
@@ -60,6 +65,7 @@ public class LoginServlet extends HttpServlet {
                 req.setAttribute("error", "用户名、密码或类型不匹配，请重新登陆！");
                 req.getRequestDispatcher("login.jsp").forward(req, resp);
             }
+
 
         }
     }
