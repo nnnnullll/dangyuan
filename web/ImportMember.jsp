@@ -28,12 +28,13 @@
 <div class="mainBorder">
     <form method="POST" enctype="multipart/form-data" action="ImportServlet?param=importMember" name="ImportMember" onsubmit="return Check()">
         <h3>党员名单导入</h3>
-       <div>
-           <h4>选择文件<input class="file"  type="file" name="Member" id="Member"></h4>
-       </div>
-        <td colspan="2">
-            <input  class="mysub"  type="submit" value="导入数据"  />
-        </td>
+        <div style="position: relative">
+
+            <a  class="file">选择文件
+                <input type="file"  name="Member" id="Member">
+            </a>
+            <input  class="mysub"  type="submit" value="导入数据" style="position: absolute;left: 0px;top:21px" />
+        </div>
     </form>
 </div>
 
