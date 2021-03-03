@@ -35,7 +35,7 @@ public class MyPartyDao {
 
         return party;
     }
-    //先在admin表中把原来的支部书记对应的支部换成0（表示已经移除） 再在party表中删除原来的支部书记id，再加入新记录（含新支部书记号）
+    //先在admin表中把原来的支部书记对应的支部换成0（表示已经移除）groupp表把所有组的支部书记更换 再在party表中删除原来的支部书记id，再加入新记录（含新支部书记号）
     //最后update新支部书记的支部id
     public void updateParty(Integer zbid,Integer zbsjid){
         String sql="update party set zbsjid=? where zbid=?";
@@ -45,6 +45,7 @@ public class MyPartyDao {
             Party tmp=getPartyById(zbid);
             //把现在的支部书记对应的支部号换成0
             updateAdmin(0,tmp.getZbsjid());
+            updateGroupp(zbid,zbsjid);
             pstmt.setInt(1, zbsjid);
             pstmt.executeUpdate();
             //把新任的支部书记对应支部号更换成当前的
@@ -73,7 +74,21 @@ public class MyPartyDao {
         }
     }
 
-
+    //在groupp表中把原来的支部书记换成指定的zbsjid  （0表示无支部）
+    public void updateGroupp(Integer zbid,Integer zbsjid){
+        String sql="update groupp set zbsjid=? where zbid=?";
+        PreparedStatement pstmt= DBUtil.getInstance().getPreparedStatement(sql);
+        try {
+            pstmt.setInt(1, zbsjid);
+            pstmt.setInt(2, zbid);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally {
+            DBUtil.getInstance().closeDBResources();
+        }
+    }
 
 
 }

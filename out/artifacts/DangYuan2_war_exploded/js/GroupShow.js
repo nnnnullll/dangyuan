@@ -3,26 +3,27 @@ window.onload=function getGroupInfo() {
      if(window.location.pathname=='/DangYuan2_war_exploded/GroupShow.jsp'){
          var zid=1;
          //var zid=localStorage.getItem("zid");
-         window.location.href='GroupServlet?param=search&zid='+zid;
+         window.location.href='GroupServlet?param=search';
+         // window.location.href='GroupServlet?param=search&zid='+zid;
      }
      else if(window.location.pathname=='/DangYuan2_war_exploded/PartyShow.jsp'){
          var zbid=1;
-         //var zbid=localStorage.getItem("zid");
-         window.location.href='PartyServlet?param=search&zbid='+zbid;
+         //var zbid=localStorage.getItem("zbid");
+         window.location.href='PartyServlet?param=search';
      }
      else if(window.location.pathname=='/DangYuan2_war_exploded/PartyModify.jsp'){
          //zbid=localStorage.getItem("zbid");
-         zbid=1;
-         document.getElementById('zbid').value=zbid;
-         document.getElementById('zbid1').value=zbid;
+         // zbid=1;
+         // document.getElementById('zbid').value=zbid;
+         // document.getElementById('zbid1').value=zbid;
          document.getElementById('myselect').value=0;
          document.getElementById('myselect1').value=-1;
      }
      else if(window.location.pathname=='/DangYuan2_war_exploded/GroupModify.jsp'){
          //zbid=localStorage.getItem("zbid");
-         zbid=1;
-         document.getElementById('zbid').value=zbid;
-         document.getElementById('partyid').value=zbid;
+         // zbid=1;
+         // document.getElementById('zbid').value=zbid;
+         // document.getElementById('partyid').value=zbid;
          document.getElementById('myselect').value=0;
          document.getElementById('myselect2').value=-1;
      }
