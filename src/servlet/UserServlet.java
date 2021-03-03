@@ -73,8 +73,9 @@ public class UserServlet extends HttpServlet {
 
         if("member".equals(type)){
             if("addmember".equals(req.getParameter("param"))){
+                Integer zbid=(Integer)(req.getSession().getAttribute("zbid"));
                 Integer zid=Integer.parseInt(req.getParameter("zid"));
-                Integer zbid=Integer.parseInt(req.getParameter("zbid"));
+//                Integer zbid=Integer.parseInt(req.getParameter("zbid"));
                 Integer cyid=Integer.parseInt(req.getParameter("cyid"));
                 userService.addMember(zid,cyid,zbid);
                 resp.sendRedirect("/DangYuan2_war_exploded/GroupModify.jsp");
@@ -82,7 +83,8 @@ public class UserServlet extends HttpServlet {
             if("changeZt".equals(req.getParameter("param"))){
                 Integer zt=Integer.parseInt(req.getParameter("zt"));
                 System.out.println(zt);
-                Integer zbid=Integer.parseInt(req.getParameter("zbid"));
+                Integer zbid=(Integer)(req.getSession().getAttribute("zbid"));
+//                Integer zbid=Integer.parseInt(req.getParameter("zbid"));
                 Integer cyid=Integer.parseInt(req.getParameter("cyid"));
                 userService.changeZt(zt,cyid,zbid);
                 resp.sendRedirect("/DangYuan2_war_exploded/GroupModify.jsp");
@@ -109,7 +111,7 @@ public class UserServlet extends HttpServlet {
                 Integer zbid=Integer.parseInt(req.getParameter("zbid"));
                 Integer zzid=Integer.parseInt(req.getParameter("zzid"));
                 userService.addHead(zid,zzid,zbid);
-                resp.sendRedirect("GroupServlet?param=search&zid="+zid);
+                resp.sendRedirect("GroupServlet?param=search");
             }
         }
         else if("admin".equals(type)){

@@ -33,6 +33,8 @@
     let type=document.getElementById("sessionStorage_type").innerText;
     sessionStorage.setItem("id",id);
     sessionStorage.setItem("type",type);
+    localStorage.setItem("id",id);
+    localStorage.setItem("type",type);
 </script>
 
 </body>

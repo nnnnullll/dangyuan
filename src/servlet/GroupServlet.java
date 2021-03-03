@@ -30,16 +30,20 @@ public class GroupServlet  extends HttpServlet{
         String param = request.getParameter("param");
         if("search".equals(param)) {//用户想要查看学生列表，进入主界面
             //查找本党小组信息
-            Groupp groupp=groupService.getGroupById(Integer.parseInt(request.getParameter("zid")));
+            Integer zid=(Integer)(request.getSession().getAttribute("zid"));
+            Groupp groupp=groupService.getGroupById(zid);
+//            Groupp groupp=groupService.getGroupById(Integer.parseInt(request.getParameter("zid")));
             request.setAttribute("groupp", groupp);
             //转发至index.jsp
             request.getRequestDispatcher("/GroupShow.jsp").forward(request, response);
         }
+
         if("update".equals(param)) {
+            //从表格里面获得并修改
             Integer zid=Integer.parseInt(request.getParameter("zid"));
             String zm = request.getParameter("zm");
             groupService.updateInfo(zm,zid);
-            response.sendRedirect("GroupServlet?param=search&zid="+zid);
+            response.sendRedirect("GroupServlet?param=search");
         }
 //        if("add".equals(param)) {//添加学生
 //            int xh = Integer.parseInt(request.getParameter("xh"));//在此行添加一个断点
