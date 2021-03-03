@@ -30,8 +30,9 @@
     <link rel="stylesheet" href="css/note.css">
     <link rel="stylesheet" href="css/GroupShow.css">
     <link rel="stylesheet" href="css/PartyShow.css">
-    <link rel="stylesheet" href="css/indexMain.css" />
     <link rel="stylesheet" href="css/showMember.css"/>
+    <link rel="stylesheet" href="css/bootstrap-4.0.0.css" />
+    <link rel="stylesheet" href="css/indexMain.css" />
 </head>
 
 <body>
@@ -50,6 +51,7 @@
             <div id="sidebar-menu" class="sidebar-menu">
                 <ul>
                     <li class="active"><a href="index.jsp"><span>首页</span></a></li>
+<%--                    <li class="active"><a href="ShowActivity.jsp"><span>活动展示</span></a></li>--%>
                     <li><a href="NoteServlet?param=all"><span>查看公告</span></a></li>
                     <li class="submenu"><a href="#"><span>党小组</span><span class="menu-arrow"></span></a>
                         <ul>

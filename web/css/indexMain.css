@@ -1,21 +1,44 @@
 .ShowActivity-Border{
-	background-color: #EAEAEA;
-	height: 1150px;
-	left: 321px;
-	margin-top: 0;
-	position: absolute;
-	top: 70px;
-	transition: all .2s ease-in-out 0s;
-	right: 0;
-	z-index: 1001;
-	padding-top: 20px;
-	overflow: hidden;
+    background-color: #EAEAEA;
+    height: 1380px;
+    left: 321px;
+    margin-top: 0;
+    position: absolute;
+    top: 70px;
+    transition: all .2s ease-in-out 0s;
+    right: 0;
+    z-index: 2;
+    overflow: hidden;
 }
+.ShowActivity-Slipper{
+    width: 1080px;
+    height: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.carousel-inner1 {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 600px;
+}
+.carousel-caption1 {
+    position: absolute;
+    right: 15%;
+    top: 468px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
 .ShowActivity-container {
-	width: 90%;
-	margin: 0 auto;
-	position: relative;
-	height: 680px;
+    width: 1080px;
+    margin: 0 auto;
+    position: relative;
+    height: 680px;
 }
 
 .isotope-box {
