@@ -30,24 +30,34 @@ public class LoginServlet extends HttpServlet {
         if (Token.isTokenStringValid(req.getParameter(Token.TOKEN_STRING_NAME), req.getSession())) {
             Integer id = Integer.parseInt(req.getParameter("id"));
             String pwd = req.getParameter("pwd");
+            Integer zid=null;
+            Integer zbid=null;
             Boolean flag = false;
             if ("member".equals(type)) {
                 Member member = (Member) userService.getUserInfo("member", id);
-                if ((member != null && member.getMm().equals(pwd)))
+                if ((member != null && member.getMm().equals(pwd))){
+                    zid=member.getZid();
+                    zbid=member.getZbid();
                     flag = true;
+                }
             } else if ("head".equals(type)) {
                 Head head = (Head) userService.getUserInfo("head", id);
                 if (head != null & head.getMm().equals(pwd)) {
+                    zid=head.getZid();
+                    zbid=head.getZbid();
                     flag = true;
                 }
             } else {
                 Admin admin = (Admin) userService.getUserInfo("admin", id);
                 if (admin != null & admin.getMm().equals(pwd)) {
+                    zbid=admin.getZbid();
                     flag = true;
                 }
             }
             if (flag == true) {
                 HttpSession session = req.getSession();
+                session.setAttribute("zid",zid);
+                session.setAttribute("zbid",zbid);
                 session.setAttribute("id", id);
                 session.setAttribute("type", type);
 

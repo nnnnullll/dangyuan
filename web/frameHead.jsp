@@ -30,9 +30,40 @@
     <link rel="stylesheet" href="css/note.css">
     <link rel="stylesheet" href="css/GroupShow.css">
     <link rel="stylesheet" href="css/PartyShow.css">
-    <link rel="stylesheet" href="css/showMember.css"/>
-    <link rel="stylesheet" href="css/bootstrap-4.0.0.css" />
     <link rel="stylesheet" href="css/indexMain.css" />
+    <link rel="stylesheet" href="css/showMember.css"/>
+    <style>
+        .file{
+            position: relative;
+            display: inline-block;
+            background: #a23e48;
+            width: 186px;
+            height: 49px;
+            border-radius: 10px;
+            text-align: center;
+            overflow: hidden;
+            color: white;
+            text-decoration: none;
+            line-height: 49px;
+            left: 100px;
+            top: 30px;
+            font-size: 20px;
+            font-weight: lighter;
+
+            border-left: 2px solid #545B62;
+            border-top: 2px solid #545B62;
+            border-bottom: 2px solid #000000;
+            border-right: 2px solid #000000;
+        }
+        .file input {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -51,7 +82,6 @@
             <div id="sidebar-menu" class="sidebar-menu">
                 <ul>
                     <li class="active"><a href="index.jsp"><span>首页</span></a></li>
-<%--                    <li class="active"><a href="ShowActivity.jsp"><span>活动展示</span></a></li>--%>
                     <li><a href="NoteServlet?param=all"><span>查看公告</span></a></li>
                     <li class="submenu"><a href="#"><span>党小组</span><span class="menu-arrow"></span></a>
                         <ul>

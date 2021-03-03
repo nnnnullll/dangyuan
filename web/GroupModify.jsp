@@ -20,10 +20,6 @@
         <form action="userServlet?type=member&param=changeZt" method="post" >
             <table width="1500px">
                 <tr>
-                    <td class="mytext">所属党支部号：</td>
-                    <td><input readonly="readonly" id="partyid" type="text" class="myinput" name="zbid"/></td>
-                </tr>
-                <tr>
                     <td class="mytext">党小组成员号：</td>
                     <td><input class="myinput" type="text"  name="cyid" /></td>
                 </tr>
@@ -51,10 +47,6 @@
                         <%--    enctype="multipart/form-data"--%>
             <table width="1500px">
                 <tr>
-                    <td class="mytext">所属党支部号：</td>
-                    <td><input readonly="readonly" type="text" class="myinput"  id="zbid" name="zbid"/></td>
-                </tr>
-                <tr>
                     <td class="mytext">转入党小组号：</td>
                     <td><input class="myinput" type="text" id="zid" name="zid" /></td>
                 </tr>
@@ -64,7 +56,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input  class="mysub" style="width: 180px;margin-left: 408px;" type="submit" value="修改" onclick="alert('党小组修改组长成功！')" />
+                        <input  class="mysub" style="width: 180px;margin-left: 408px;" type="submit" value="修改" onclick="alert('党小组成员转出成功！')" />
                     </td>
                 </tr>
             </table>
