@@ -32,8 +32,6 @@
     <link rel="stylesheet" href="css/PartyShow.css">
     <link rel="stylesheet" href="css/indexMain.css" />
     <link rel="stylesheet" href="css/showMember.css"/>
-    <link rel="stylesheet" href="css/bootstrap-4.0.0.css" />
-    <link rel="stylesheet" href="css/indexMain.css" />
     <style>
         .file{
             position: relative;
