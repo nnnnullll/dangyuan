@@ -124,13 +124,13 @@
                     <li class="submenu"><a href="#"><span>党小组</span><span class="menu-arrow"></span></a>
                         <ul>
                             <li><a href="MemberServlet?method=Group">查看小组</a></li>
-                            <li><a href="GroupShow.jsp">(公共的)小组信息</a></li>
+                            <li><a href="GroupShow.jsp">小组信息</a></li>
                             <c:choose>
-                                <c:when test = "${sessionScope.status==1}">
-                                    <li><a href="GroupModify.jsp">（组长）成员管理</a></li>
-                                    <li><a href="NoteServlet?param=alll">（组长）删除公告</a></li>
-                                    <li><a href="PushNote.jsp">（公共看组长发布）公告</a></li>
-                                    <li><a href="PushActivity.jsp">（公共看组长发布）活动记录</a></li>
+                                <c:when test = "${sessionScope.type=='head'}">
+                                    <li><a href="GroupModify.jsp">成员管理</a></li>
+                                    <li><a href="NoteServlet?param=alll">删除公告</a></li>
+                                    <li><a href="PushNote.jsp">发布公告</a></li>
+                                    <li><a href="Activity.jsp">发布活动记录</a></li>
                                 </c:when>
                                 <c:otherwise></c:otherwise>
                             </c:choose>
@@ -140,22 +140,21 @@
                     <li class="submenu"><a href="MemberServlet?method=Branch"><span>党支部</span><span class="menu-arrow"></span></a>
                         <ul>
                             <li><a href="MemberServlet?method=Branch">查看支部</a></li>
-                            <li><a href="ImportMember.jsp">（管理员）导入名单</a></li>
-                            <li><a href="ImportGroupLeader.jsp">（管理员）党小组导入</a></li>
-                            <li><a href="PartyModify.jsp">(管理员)成员管理</a></li>
-                            <li><a href="PartyShow.jsp">(公共的)支部信息</a></li>
-                            <li><a href="PushNote.jsp">(管理员)发布公告</a></li>
-                            <li><a href="DeleteNote.jsp">(管理员)删除公告</a></li>
+                            <li><a href="PartyShow.jsp">支部信息</a></li>
+                            <c:choose>
+                                <c:when test = "${sessionScope.type=='admin'}">
+                                    <li><a href="ImportMember.jsp">导入名单</a></li>
+                                    <li><a href="ImportGroup.jsp">党小组导入</a></li>
+                                    <li><a href="PartyModify.jsp">成员管理</a></li>
+                                    <li><a href="PushNote.jsp">发布公告</a></li>
+                                    <li><a href="DeleteNote.jsp">删除公告</a></li>
+                                </c:when>
+                                <c:otherwise></c:otherwise>
+                            </c:choose>
                         </ul>
                     </li>
-                    <li><a href="userServlet?param=info&type=member&id=1"><span>个人信息</span></a></li>
-                    <li class="submenu"><a href="#"><span>Contact Me</span><span class="menu-arrow"></span></a>
-                        <ul>
-                            <li><a href="#">Student List</a></li>
-                            <li><a href="#">Student View</a></li>
-                            <li><a href="#">Student Add</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="userServlet?param=info"><span>个人信息</span></a></li>
+
                 </ul>
             </div>
         </div>

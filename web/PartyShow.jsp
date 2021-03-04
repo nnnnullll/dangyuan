@@ -9,7 +9,7 @@
 <%@include file="frameHead.jsp"%>
 <!-- 下面是修改的页面 -->
 <div class="mainBorder">
-    <h3>党支部信息展示及修改</h3>
+    <h3>党支部信息</h3>
     <div style="width: 90%;margin: 30px;">
         <form action="PartyServlet?param=update" method="post" >
             <%--    enctype="multipart/form-data"--%>
@@ -30,11 +30,17 @@
                     <td class="mytext">党支部书记号：</td>
                     <td><input class="myinput" type="text"  id="zbsjid" name="zbsjid" value="${requestScope.party.zbsjid}" /></td>
                 </tr>
-                <tr>
-                    <td colspan="2">
-                        <input  class="mysub" style="width: 180px;margin-left: 408px;" type="submit" value="提交" onclick="alert('党支部书记修改成功！')" />
-                    </td>
-                </tr>
+                <c:choose>
+                    <c:when test = "${sessionScope.type=='admin'}">
+                        <tr>
+                            <td colspan="2">
+                                <input  class="mysub" style="width: 180px;margin-left: 408px;" type="submit" value="提交" onclick="alert('党支部书记修改成功！')" />
+                            </td>
+                        </tr>
+                    </c:when>
+                    <c:otherwise></c:otherwise>
+                </c:choose>
+
             </table>
         </form>
     </div>

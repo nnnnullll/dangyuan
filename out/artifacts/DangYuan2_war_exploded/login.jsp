@@ -137,7 +137,7 @@
                 <input name="pwd" type="password" class="input-item" id="pwd" placeholder="密码"/>
             </div>
             <div class="form-item">
-                <p>登陆类型</p>
+                <p>身份</p>
                 <select class="input-item" name="type">
                     <option type="radio"  value="member"/>
                     成员

@@ -20,11 +20,12 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        String type=req.getParameter("type");
+
+        String type= (String) req.getSession().getAttribute("type");
         String param=req.getParameter("param");
         req.setAttribute("type",type);
         if("goModify".equals(param)||"info".equals(param)){
-            Integer id=Integer.parseInt(req.getParameter("id"));
+            Integer id= (Integer) req.getSession().getAttribute("id");
             Object userinfo=userService.getUserInfo(type,id);
             if("member".equals(type)){
                 Member user=(Member) userinfo;
@@ -45,32 +46,25 @@ public class UserServlet extends HttpServlet {
 
         }
         else if("doModify".equals(param)){
-            Integer id=Integer.parseInt(req.getParameter("id"));
+            Integer id= (Integer) req.getSession().getAttribute("id");
             String xm=req.getParameter("xm");
             String xb=req.getParameter("xb");
-            String tx=req.getParameter("tx");
-            Integer dyid=Integer.parseInt(req.getParameter("dyid"));
             String sjh=req.getParameter("sjh");
             String sfz=req.getParameter("sfz");
             String csrq=req.getParameter("csrq");
             String jg=req.getParameter("jg");
             String sqrq=req.getParameter("sqrq");
             String jjrq=req.getParameter("jjrq");
-            String fzrq=req.getParameter("fzrq");
             String ybrq=req.getParameter("ybrq");
             String zsrq=req.getParameter("zsrq");
-            String sqs1=req.getParameter("sqs1");
-            String sqs2=req.getParameter("sqs2");
-            String zys1=req.getParameter("zys1");
-            String zys2=req.getParameter("zys2");
-            userService.updateUserInfo(type,id,xm,xb,tx,csrq,jg,sfz,sjh,dyid,sqrq,jjrq,fzrq,ybrq,zsrq,sqs1,sqs2,zys1,zys2);
-            req.getRequestDispatcher("userServlet?param=goModify&type="+type+"&id="+id).forward(req,resp);
+            userService.updateUserInfo(type,id,xm,xb,csrq,jg,sfz,sjh,sqrq,jjrq,ybrq,zsrq);
+            req.getRequestDispatcher("userServlet?param=goModify").forward(req,resp);
         }
         else if("ModifyPwd".equals(param)){
-            Integer id=Integer.parseInt(req.getParameter("id"));
+            Integer id= (Integer) req.getSession().getAttribute("id");
             String mm=req.getParameter("mm");
             userService.changePwd(type,id,mm);
-            req.getRequestDispatcher("userServlet?param=goModify&type="+type+"&id="+id).forward(req,resp);
+            req.getRequestDispatcher("userServlet?param=goModify").forward(req,resp);
         }
 
         if("member".equals(type)){

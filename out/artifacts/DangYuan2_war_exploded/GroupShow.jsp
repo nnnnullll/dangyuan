@@ -10,7 +10,7 @@
 <%@include file="frameHead.jsp"%>
 <!-- 下面是修改的页面 -->
 <div class="mainBorder">
-    <h3>党小组信息展示及修改</h3>
+    <h3>党小组信息</h3>
     <div style="width: 90%;margin: 30px;">
         <form action="GroupServlet?param=update" method="post" >
             <%--    enctype="multipart/form-data"--%>
@@ -39,11 +39,16 @@
                     <td class="mytext" id="zid-text">所属党小组号：</td>
                     <td><input class="myinput" type="text" readonly="readonly" id="zid" name="zid" value="${requestScope.groupp.zid}" /></td>
                 </tr>
-                <tr>
-                    <td colspan="2">
-                        <input class="mysub" style="width: 180px;margin-left: 408px;" type="submit" onclick="remind()" value="提交" />
-                    </td>
-                </tr>
+                <c:choose>
+                    <c:when test = "${sessionScope.type=='admin'}">
+                    <tr>
+                        <td colspan="2">
+                            <input class="mysub" style="width: 180px;margin-left: 408px;" type="submit" onclick="remind()" value="提交" />
+                        </td>
+                    </tr>
+                    </c:when>
+                    <c:otherwise></c:otherwise>
+                </c:choose>
             </table>
         </form>
     </div>

@@ -85,4 +85,15 @@ public class UserService {
     }
 
 
+    public void changeTx(int zbid, int id, String photoName) {
+        userDao.changeTx(zbid,id,photoName);
+    }
+
+    public void changeZys(int zbid, int id, List<String> photo) {
+        userDao.changeZys(zbid,id,photo);
+    }
+
+    public void updateUserInfo(String type, Integer id, String xm, String xb, String csrq, String jg, String sfz, String sjh, String sqrq, String jjrq, String ybrq, String zsrq) {
+        userDao.updateUserInfo(type,id,xm,xb,csrq,jg,sfz,sjh,sqrq,jjrq,ybrq,zsrq);
+    }
 }

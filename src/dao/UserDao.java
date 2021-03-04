@@ -419,4 +419,69 @@ public class UserDao {
         }
         return memberList;
     }
+
+
+    public void changeTx(int zbid, int id, String photoName) {
+        String sql="update member set tx=? where cyid=? and zbid=?";
+        PreparedStatement pstmt=DBUtil.getInstance().getPreparedStatement(sql);
+        try {
+            pstmt.setString(1,photoName);
+            pstmt.setInt(2,id);
+            pstmt.setInt(3,zbid);
+            pstmt.executeUpdate();
+        }catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally {
+            DBUtil.getInstance().closeDBResources();
+        }
+    }
+
+    public void changeZys(int zbid, int id, List<String> photo) {
+        String sql="update member set sqs1=?,zys1=? where cyid=? and zbid=?";
+        PreparedStatement pstmt=DBUtil.getInstance().getPreparedStatement(sql);
+        try {
+            pstmt.setString(1,photo.get(0));
+            pstmt.setString(2,photo.get(1));
+            pstmt.setInt(3,id);
+            pstmt.setInt(4,zbid);
+            pstmt.executeUpdate();
+        }catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally {
+            DBUtil.getInstance().closeDBResources();
+        }
+    }
+
+    public void updateUserInfo(String type, Integer id, String xm, String xb, String csrq, String jg, String sfz, String sjh, String sqrq, String jjrq, String ybrq, String zsrq) {
+        String sql = null;
+        if ("member".equals(type)) {
+            sql = "update member set xm=?,xb=?,csrq=?,jg=?,sfz=?,sjh=?,sqrq=?,jjrq=?,ybrq=?,zsrq=?where cyid=?";
+        } else if ("head".equals(type)) {
+            sql = "update head set xm=?,xb=?,csrq=?,jg=?,sfz=?,sjh=?,sqrq=?,jjrq=?,ybrq=?,zsrq=? where zzid=?";
+        } else if ("admin".equals(type)) {
+            sql = "update admin set xm=?,xb=?,csrq=?,jg=?,sfz=?,sjh=?,sqrq=?,jjrq=?,ybrq=?,zsrq=? where glyid=?";
+        }
+        PreparedStatement pstmt = DBUtil.getInstance().getPreparedStatement(sql);
+        try {
+            pstmt.setString(1, xm);
+            pstmt.setString(2, xb);
+            pstmt.setString(3, csrq);
+            pstmt.setString(4, jg);
+            pstmt.setString(5, sfz);
+            pstmt.setString(6, sjh);
+            pstmt.setString(7, sqrq);
+            pstmt.setString(8, jjrq);
+            pstmt.setString(9, ybrq);
+            pstmt.setString(10, zsrq);
+            pstmt.setInt(11, id);
+
+            pstmt.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            DBUtil.getInstance().closeDBResources();
+        }
+    }
 }
