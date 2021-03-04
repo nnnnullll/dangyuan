@@ -32,6 +32,33 @@
     <link rel="stylesheet" href="css/PartyShow.css">
     <link rel="stylesheet" href="css/indexMain.css" />
     <link rel="stylesheet" href="css/showMember.css"/>
+    <link rel="stylesheet" href="css/bootstrap-4.0.0.css" />
+    <style>
+        .image{
+            width: 240px;
+            max-height: 300px;
+            margin: 20px auto 0;
+            background-color: transparent;
+            overflow: hidden;
+        }
+        .image img{
+            width: 100%;
+            height: auto;
+        }
+        .member-content{
+            height: 30px;
+            width: 240px;
+            margin: 0 auto;
+        }
+        .member-content p{
+            margin-top: 15px;
+            text-align: center;
+            width: 240px;
+            color: #000;
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+    </style>
     <style>
         .file{
             position: relative;

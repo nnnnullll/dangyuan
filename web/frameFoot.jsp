@@ -18,7 +18,6 @@
 <!-- Bootstrap core JavaScript -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/node.js"></script>
 <script src="js/isotope.min.js"></script>
 <script src="js/owl-carousel.js"></script>
 <script src="js/lightbox.js"></script>
@@ -27,7 +26,8 @@
 <script src="js/popper.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/Note.js"></script>
-<script src="js/myfunction.js"></script>
+<script src="js/bootstrap-4.0.0.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" language="JavaScript">
     let id=document.getElementById("sessionStorage_id").innerText;
     let type=document.getElementById("sessionStorage_type").innerText;
