@@ -8,7 +8,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html lang="zh"  >
+<html lang="zh">
 <head>
 
     <meta charset="utf-8"/>
@@ -25,6 +25,30 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap-4.0.0.css" />
     <style>
+        .image{
+            width: 240px;
+            max-height: 300px;
+            margin: 20px auto 0;
+            background-color: transparent;
+            overflow: hidden;
+        }
+        .image img{
+            width: 100%;
+            height: auto;
+        }
+        .member-content{
+            height: 30px;
+            width: 240px;
+            margin: 0 auto;
+        }
+        .member-content p{
+            margin-top: 15px;
+            text-align: center;
+            width: 240px;
+            color: #000;
+            font-size: 1.5em;
+            font-weight: 500;
+        }
         .ShowActivity-Border{
             background-color: #EAEAEA;
             height: 1380px;
@@ -212,6 +236,19 @@
     </div>
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
+        <div class="responsive-nav">
+            <div id="menu" class="menu">
+                <div class="container">
+                    <div class="image">
+                        <a href="#"><img src="images/test-image.jpg" alt="" /></a>
+                    </div>
+                    <div class="member-content">
+                        <p>${sessionScope.xm}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="sidebar-inner slimscroll">
             <div id="sidebar-menu" class="sidebar-menu">
                 <ul>

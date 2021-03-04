@@ -1706,7 +1706,7 @@ html.menu-opened body {
 	top: 70px;
 	transition: all .2s ease-in-out 0s;
 	width: 320px;
-	z-index: 1001
+	z-index: 2
 }
 
 .sidebar.opened {

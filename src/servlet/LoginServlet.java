@@ -32,12 +32,14 @@ public class LoginServlet extends HttpServlet {
             String pwd = req.getParameter("pwd");
             Integer zid=null;
             Integer zbid=null;
+            String xm=null;
             Boolean flag = false;
             if ("member".equals(type)) {
                 Member member = (Member) userService.getUserInfo("member", id);
                 if ((member != null && member.getMm().equals(pwd))){
                     zid=member.getZid();
                     zbid=member.getZbid();
+                    xm=member.getXm();
                     flag = true;
                 }
             } else if ("head".equals(type)) {
@@ -45,12 +47,14 @@ public class LoginServlet extends HttpServlet {
                 if (head != null & head.getMm().equals(pwd)) {
                     zid=head.getZid();
                     zbid=head.getZbid();
+                    xm=head.getXm();
                     flag = true;
                 }
             } else {
                 Admin admin = (Admin) userService.getUserInfo("admin", id);
                 if (admin != null & admin.getMm().equals(pwd)) {
                     zbid=admin.getZbid();
+                    xm=admin.getXm();
                     flag = true;
                 }
             }
@@ -58,6 +62,7 @@ public class LoginServlet extends HttpServlet {
                 HttpSession session = req.getSession();
                 session.setAttribute("zid",zid);
                 session.setAttribute("zbid",zbid);
+                session.setAttribute("xm",xm);
                 session.setAttribute("id", id);
                 session.setAttribute("type", type);
 
