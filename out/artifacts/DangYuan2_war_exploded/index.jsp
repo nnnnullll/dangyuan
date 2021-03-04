@@ -25,8 +25,8 @@
     <link rel="stylesheet" href="css/bootstrap-4.0.0.css" />
     <style>
         .image{
-            width: 240px;
-            max-height: 300px;
+            width: 140px;
+            max-height: 200px;
             margin: 20px auto 0;
             background-color: transparent;
             overflow: hidden;
@@ -41,11 +41,11 @@
             margin: 0 auto;
         }
         .member-content p{
-            margin-top: 15px;
+            margin-top: 10px;
             text-align: center;
             width: 240px;
             color: #000;
-            font-size: 1.5em;
+            font-size: 16px;
             font-weight: 500;
         }
         .ShowActivity-Border{
