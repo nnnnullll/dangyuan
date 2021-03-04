@@ -56,7 +56,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input  class="mysub" style="width: 180px;margin-left: 408px;" type="submit" value="修改" onclick="alert('党小组修改组长成功！')" />
+                        <input  class="mysub" style="width: 180px;margin-left: 408px;" type="submit" value="修改" onclick="alert('党小组成员转出成功！')" />
                     </td>
                 </tr>
             </table>

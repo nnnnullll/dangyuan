@@ -19,6 +19,7 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
         String type=req.getParameter("type");
         String param=req.getParameter("param");
         req.setAttribute("type",type);
@@ -63,6 +64,7 @@ public class UserServlet extends HttpServlet {
             String zys1=req.getParameter("zys1");
             String zys2=req.getParameter("zys2");
             userService.updateUserInfo(type,id,xm,xb,tx,csrq,jg,sfz,sjh,dyid,sqrq,jjrq,fzrq,ybrq,zsrq,sqs1,sqs2,zys1,zys2);
+            req.getRequestDispatcher("userServlet?param=goModify&type="+type+"&id="+id).forward(req,resp);
         }
         else if("ModifyPwd".equals(param)){
             Integer id=Integer.parseInt(req.getParameter("id"));

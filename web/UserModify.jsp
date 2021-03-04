@@ -81,6 +81,13 @@
                 </tr>
             </table>
         </form>
+        <form action="photoServlet?param=tx" method="post"  enctype="multipart/form-data">
+            <div class="form-group">
+                <span style="color: white;font:18px bolder;">上传用户头像   </span>
+                <input type="file" style="color:white;" name="photo" id="photo" />
+            </div>
+            <input type="submit" value="提交" />
+        </form>
     </div>
 </div>
 
