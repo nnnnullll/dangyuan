@@ -88,15 +88,15 @@
                             <li><a href="MemberServlet?method=Group">查看小组</a></li>
                             <li><a href="GroupShow.jsp">(公共的)小组信息</a></li>
                             <c:choose>
-                                <c:when test = "${sessionScope.status==0}">
-
+                                <c:when test = "${sessionScope.status==1}">
+                                    <li><a href="GroupModify.jsp">（组长）成员管理</a></li>
+                                    <li><a href="NoteServlet?param=alll">（组长）删除公告</a></li>
+                                    <li><a href="PushNote.jsp">（公共看组长发布）公告</a></li>
+                                    <li><a href="PushActivity.jsp">（公共看组长发布）活动记录</a></li>
                                 </c:when>
                                 <c:otherwise></c:otherwise>
                             </c:choose>
-                            <li><a href="GroupModify.jsp">（组长）成员管理</a></li>
-                            <li><a href="NoteServlet?param=alll">（组长）删除公告</a></li>
-                            <li><a href="PushNote.jsp">（公共看组长发布）公告</a></li>
-                            <li><a href="PushActivity.jsp">（公共看组长发布）活动记录</a></li>
+
                         </ul>
                     </li>
                     <li class="submenu"><a href="MemberServlet?method=Branch"><span>党支部</span><span class="menu-arrow"></span></a>
