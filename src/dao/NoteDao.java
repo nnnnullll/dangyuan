@@ -70,10 +70,35 @@ public class NoteDao {
             DBUtil.getInstance().closeDBResources();
         }
     }
+    public List<Note> getControllerNote() {
+        List<Note> notelist = new ArrayList<Note>();
+        String sql = "select * from note where dx=0 and sc!=1";
+        PreparedStatement pstmt = DBUtil.getInstance().getPreparedStatement(sql);
+        try {
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Integer ggid = rs.getInt("ggid");
+                String bt = rs.getString("bt");
+                String nr = rs.getString("nr");
+                String sj = rs.getString("sj");
+                Integer dx = rs.getInt("dx");
+                Integer sc = rs.getInt("sc");
+                Note n = new Note(ggid, bt, nr, sj, dx, sc);
+                notelist.add(n);
+            }
+            rs.close();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } finally {
+            DBUtil.getInstance().closeDBResources();
+        }
+        return notelist;
+    }
 
     public List<Note> getMemberNote() {
         List<Note> notelist = new ArrayList<Note>();
-        String sql = "select * from note where dx!=1 and sc!=1";
+        String sql = "select * from note where dx=1 and sc!=1";
         PreparedStatement pstmt = DBUtil.getInstance().getPreparedStatement(sql);
         try {
             ResultSet rs = pstmt.executeQuery();

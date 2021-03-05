@@ -20,7 +20,10 @@ public class NoteService {
     public List<Note> getAllByType(String type){
         if("member".equals(type)){
             return noteDao.getMemberNote();
-        }else{
+        }else if("controller".equals(type)){
+            return noteDao.getControllerNote();
+        }
+        else{
             return noteDao.getAllNote();
         }
     }

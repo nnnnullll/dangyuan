@@ -149,7 +149,7 @@
                                     <li><a href="ImportGroup.jsp">党小组导入</a></li>
                                     <li><a href="PartyModify.jsp">成员管理</a></li>
                                     <li><a href="PushNote.jsp">发布公告</a></li>
-                                    <li><a href="DeleteNote.jsp">删除公告</a></li>
+                                    <li><a href="NoteServlet?param=alllzb">删除公告</a></li>
                                 </c:when>
                                 <c:otherwise></c:otherwise>
                             </c:choose>
