@@ -33,6 +33,7 @@ public class LoginServlet extends HttpServlet {
             Integer zid=null;
             Integer zbid=null;
             String xm=null;
+            String tx=null;
             Boolean flag = false;
             if ("member".equals(type)) {
                 Member member = (Member) userService.getUserInfo("member", id);
@@ -40,6 +41,7 @@ public class LoginServlet extends HttpServlet {
                     zid=member.getZid();
                     zbid=member.getZbid();
                     xm=member.getXm();
+                    tx=member.getTx();
                     flag = true;
                 }
             } else if ("head".equals(type)) {
@@ -48,6 +50,7 @@ public class LoginServlet extends HttpServlet {
                     zid=head.getZid();
                     zbid=head.getZbid();
                     xm=head.getXm();
+                    tx=head.getTx();
                     flag = true;
                 }
             } else {
@@ -55,6 +58,7 @@ public class LoginServlet extends HttpServlet {
                 if (admin != null & admin.getMm().equals(pwd)) {
                     zbid=admin.getZbid();
                     xm=admin.getXm();
+                    tx=admin.getTx();
                     flag = true;
                 }
             }
@@ -65,6 +69,7 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("xm",xm);
                 session.setAttribute("id", id);
                 session.setAttribute("type", type);
+                session.setAttribute("tx",tx);
 
                 List<Activity> activityList = loginService.getsixActivity();
                 Integer[] act_hdid = new Integer[activityList.size()];

@@ -26,14 +26,16 @@
     <style>
         .image{
             width: 140px;
-            max-height: 200px;
+            max-height: 140px;
             margin: 20px auto 0;
             background-color: transparent;
             overflow: hidden;
         }
         .image img{
             width: 100%;
-            height: auto;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
         }
         .member-content{
             height: 30px;
@@ -239,7 +241,7 @@
             <div id="menu" class="menu">
                 <div class="container">
                     <div class="image">
-                        <a href="#"><img src="images/test-image.jpg" alt="" /></a>
+                        <a href="#"><img src="photos/${sessionScope.tx}.jpg" alt="" /></a>
                     </div>
                     <div class="member-content">
                         <p>${sessionScope.xm}</p>

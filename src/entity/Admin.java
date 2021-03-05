@@ -53,7 +53,9 @@ public class Admin {
     public Integer getZbid() {
         return zbid;
     }
-
+    public String  getZid() {
+        return "0";
+    }
     public void setZbid(Integer zbid) {
         this.zbid = zbid;
     }

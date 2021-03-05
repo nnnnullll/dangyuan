@@ -38,7 +38,7 @@ public class PhotoServlet extends HttpServlet {
                 e.printStackTrace();
             }
             req.setCharacterEncoding("utf-8");
-             System.out.println(req.getServletContext().getRealPath("/photos"));
+//             System.out.println(req.getServletContext().getRealPath("/photos"));
             String photosPath = req.getServletContext().getRealPath("/photos");
             File file =su.getFiles().getFile(0);
             String photoName = new StringBuilder(param.hashCode()).append(System.currentTimeMillis()).toString();
@@ -48,6 +48,7 @@ public class PhotoServlet extends HttpServlet {
                 e.printStackTrace();
             }
             userService.changeTx(zbid,id,photoName);
+            req.getSession().setAttribute("tx",photoName);
             resp.sendRedirect("userServlet?param=goModify");
         }else if("zys".equals(param)){
             //创建smartupload组件
@@ -63,7 +64,7 @@ public class PhotoServlet extends HttpServlet {
             List<String> photo = new ArrayList<>();
             for(int i=0;i<2;i++){
                 String name=  new StringBuilder(param.hashCode()).append(id).toString();;
-                System.out.println(req.getServletContext().getRealPath("/photos"));
+//                System.out.println(req.getServletContext().getRealPath("/photos"));
                 String photosPath = req.getServletContext().getRealPath("/photos");
                 File file =su.getFiles().getFile(0);
                 String photoName = new StringBuilder(name.hashCode()).append(System.currentTimeMillis()).toString();
