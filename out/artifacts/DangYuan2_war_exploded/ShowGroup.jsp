@@ -18,12 +18,6 @@
             <tr class="GroupMember">
                 <td>角色</td>
                 <td>姓名</td>
-                <td>性别</td>
-                <td>手机号</td>
-                <td>出生日期</td>
-                <td>身份证</td>
-            </tr>
-            <tr class="GroupMember" style="margin-bottom: 2px">
                 <td>籍贯</td>
                 <td>申请人日期</td>
                 <td>积极分子日期</td>
@@ -33,13 +27,11 @@
             </tr>
             <tr class="GroupMember">
                 <td>组长</td>
-                <td>${Head.xm}</td>
-                <td>${Head.xb}</td>
-                <td>${Head.sjh}</td>
-                <td>${Head.csrq}</td>
-                <td>${Head.sfz}</td>
-            </tr>
-            <tr class="GroupMember">
+                <td>
+                    <a href="userServlet?param=goinfo&type=head&id=${Head.zzid}">
+                        ${Head.xm}
+                    </a>
+                </td>
                 <td>${Head.jg}</td>
                 <td>${Head.sqrq}</td>
                 <td>${Head.jjrq}</td>
@@ -55,13 +47,11 @@
             <c:forEach items="${memberList}" var="item">
                 <tr class="GroupMember">
                     <td>组员</td>
-                    <td>${item.xm}</td>
-                    <td>${item.xb}</td>
-                    <td>${item.sjh}</td>
-                    <td>${item.csrq}</td>
-                    <td>${item.sfz}</td>
-                </tr>
-                <tr class="GroupMember">
+                    <td>
+                        <a href="userServlet?param=goinfo&type=member&id=${item.cyid}">
+                                ${item.xm}
+                        </a>
+                    </td>
                     <td>${item.jg}</td>
                     <td>${item.sqrq}</td>
                     <td>${item.jjrq}</td>
@@ -77,6 +67,7 @@
             </c:forEach>
         </table>
     </div>
+
 
 </div>
 
