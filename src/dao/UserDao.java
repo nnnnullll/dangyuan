@@ -12,7 +12,7 @@ import java.util.List;
 public class UserDao {
     public Object getMemberInfo(Integer id) {
         Member userInfo = null;
-        String sql = "select * from member where cyid=?";
+        String sql = "select * from member a,groupp b,party c where a.zid=b.zid and a.zbid=c.zbid and cyid=?";
         PreparedStatement pstmt = DBUtil.getInstance().getPreparedStatement(sql);
         try {
             pstmt.setInt(1, id);
@@ -40,8 +40,12 @@ public class UserDao {
                 String sqs2 = rs.getString("sqs2");
                 String zys1 = rs.getString("zys1");
                 String zys2 = rs.getString("zys1");
+                String zm=rs.getString("zm");
+                String zbm=rs.getString("zbm");
 
                 userInfo = new Member(cyid, mm, zid, zbid, tx, dyid, xm, sjh, sfz, xb, csrq, jg, sqrq, jjrq, fzrq, ybrq, zsrq, zt, sqs1, sqs2, zys1, zys2);
+                userInfo.setZm(zm);
+                userInfo.setZbm(zbm);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -53,7 +57,7 @@ public class UserDao {
 
     public Object getHeadInfo(Integer id) {
         Head userInfo = null;
-        String sql = "select * from head where zzid=?";
+        String sql = "select * from head a,groupp b,party c where a.zid=b.zid and a.zbid=c.zbid and zzid=?";
         PreparedStatement pstmt = DBUtil.getInstance().getPreparedStatement(sql);
         try {
             pstmt.setInt(1, id);
@@ -81,8 +85,12 @@ public class UserDao {
                 String sqs2 = rs.getString("sqs2");
                 String zys1 = rs.getString("zys1");
                 String zys2 = rs.getString("zys1");
+                String zm=rs.getString("zm");
+                String zbm=rs.getString("zbm");
 
                 userInfo = new Head(zzid, mm, zid, zbid, tx, dyid, xm, sjh, sfz, xb, csrq, jg, sqrq, jjrq, fzrq, ybrq, zsrq, zt, sqs1, sqs2, zys1, zys2);
+                userInfo.setZm(zm);
+                userInfo.setZbm(zbm);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -94,7 +102,7 @@ public class UserDao {
 
     public Object getAdminInfo(Integer id) {
         Admin userInfo = null;
-        String sql = "select * from admin where glyid=?";
+        String sql = "select * from admin a,party b where a.zbid=b.zbid and glyid=?";
         PreparedStatement pstmt = DBUtil.getInstance().getPreparedStatement(sql);
         try {
             pstmt.setInt(1, id);
@@ -121,8 +129,10 @@ public class UserDao {
                 String sqs2 = rs.getString("sqs2");
                 String zys1 = rs.getString("zys1");
                 String zys2 = rs.getString("zys1");
+                String zbm=rs.getString("zbm");
 
                 userInfo = new Admin(glyid, mm, zbid, tx, dyid, xm, sjh, sfz, xb, csrq, jg, sqrq, jjrq, fzrq, ybrq, zsrq, zt, sqs1, sqs2, zys1, zys2);
+                userInfo.setZbm(zbm);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

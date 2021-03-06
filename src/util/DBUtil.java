@@ -29,8 +29,8 @@ public class DBUtil {
     public Connection getConnection() {
         try {
             //conn = DriverManager.getConnection("jdbc:sqlserver://127.0.0.1:1433;databaseName=school;user=sa;password=123456");
-            conn = DriverManager.getConnection("jdbc:mysql://47.96.153.145:3306/dangyuan?useSSL=false&serverTimezone=UTC", "root", "root");
-//            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/school?useSSL=false&serverTimezone=UTC", "root", "123456");
+//            conn = DriverManager.getConnection("jdbc:mysql://47.96.153.145:3306/dangyuan?useSSL=false&serverTimezone=UTC", "root", "root");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dangyuan?useSSL=false&serverTimezone=UTC", "root", "123456");
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

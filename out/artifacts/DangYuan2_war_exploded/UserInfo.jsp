@@ -35,8 +35,15 @@
                 <td >手机号</td><td  colspan="3">${user.sjh}</td>
             </tr>
             <tr>
-                <td >党小组</td><td  >${user.zid}</td>
-                <td >党支部</td><td >${user.zbid}</td>
+                <td >党支部</td>
+                <td >${requestScope.user.zbm}</td>
+                <c:if test="${requestScope.user.zm!=null}">
+                    <td >党小组</td>
+                    <td >${requestScope.user.zm}</td>
+                </c:if>
+                <c:if test="${requestScope.user.zm==null}">
+                    <td colspan="2"></td>
+                </c:if>
             </tr>
             <tr>
                 <td  >申请日期</td><td >${user.sqrq}</td>
@@ -46,11 +53,24 @@
                 <td >预备日期</td><td  >${user.ybrq}</td>
                 <td >正式日期</td><td >${user.zsrq}</td>
             </tr>
-            <tr>
-                <td colspan="4" align="center">
-                    <button style="font-size: 16px;" onclick="window.location.href='userServlet?param=goModify'">点击修改</button>
-                </td>
-            </tr>
+            <c:choose>
+                <c:when test="${showModi==1}">
+                    <tr>
+                        <td colspan="4" align="center">
+                            <button style="font-size: 16px;" onclick="window.location.href='userServlet?param=goModify'">点击修改</button>
+                        </td>
+                    </tr>
+                </c:when>
+                <c:when test="${showModi==0}">
+                    <tr>
+                        <td colspan="4" align="center">
+                            <button style="font-size: 16px;" onclick="javascript :history.back(-1);">返回</button>
+                        </td>
+                    </tr>
+                </c:when>
+                <c:otherwise></c:otherwise>
+            </c:choose>
+
             </tbody>
         </table>
     </div>

@@ -8,7 +8,7 @@ public class Member {
     Integer dyid;
     String xm,sjh,sfz,xb,csrq,jg,sqrq,jjrq,fzrq,ybrq,zsrq;
     Integer zt;
-    String sqs1,sqs2,zys1,zys2;
+    String sqs1,sqs2,zys1,zys2,zm,zbm;
 
     public Member(Integer cyid, String mm, Integer zid, Integer zbid, Integer dyid, String xm, String sjh, String sfz, String xb, String csrq, String jg, String sqrq, String jjrq, String fzrq, String ybrq, String zsrq,Integer zt) {
         this.cyid = cyid;
@@ -229,5 +229,21 @@ public class Member {
 
     public void setZys2(String zys2) {
         this.zys2 = zys2;
+    }
+
+    public void setZm(String zm) {
+        this.zm=zm;
+    }
+
+    public void setZbm(String zbm) {
+        this.zbm=zbm;
+    }
+
+    public String getZm() {
+        return zm;
+    }
+
+    public String getZbm() {
+        return zbm;
     }
 }

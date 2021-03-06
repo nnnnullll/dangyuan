@@ -123,10 +123,16 @@
 
                             </tr>
                             <tr>
-                                <td >党小组</td>
-                                <td ><input  style="border:none;overflow:hidden;width: 100%; height: 100%" type="text" name="zid" value="${requestScope.user.zid}" /></td>
                                 <td >党支部</td>
-                                <td ><input  style="border:none;overflow:hidden;width: 100%; height: 100%" type="text" name="zbid" value="${requestScope.user.zbid}" /></td>
+                                <td >${requestScope.user.zbm}</td>
+                                <c:if test="${requestScope.user.zm!=null}">
+                                    <td >党小组</td>
+                                    <td >${requestScope.user.zm}</td>
+                                </c:if>
+                                <c:if test="${requestScope.user.zm==null}">
+                                    <td colspan="2"></td>
+                                </c:if>
+
                             </tr>
                             <tr>
                                 <td  >申请日期</td>

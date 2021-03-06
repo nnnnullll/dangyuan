@@ -48,22 +48,16 @@ public class NoteServlet extends HttpServlet{
             request.setAttribute("notelist", notelist);
             request.getRequestDispatcher("Note.jsp").forward(request, response);
         }else if("alll".equals(param)){
-            String type = null;
+            String type = "member";
             HttpSession session = request.getSession(false);
-            if (session != null) {
-                type = (String) session.getAttribute("member");
-            }
 
             List<Note> notelist=noteService.getAllByType(type);
             request.setAttribute("notelist", notelist);
             response.setContentType("text/html;charset=utf-8");
             request.getRequestDispatcher("DeleteNote.jsp").forward(request, response);
         } else if("alllzb".equals(param)){
-            String type = null;
+            String type = "controller";
             HttpSession session = request.getSession(false);
-            if (session != null) {
-                type = (String) session.getAttribute("controller");
-            }
 
             List<Note> notelist=noteService.getAllByType(type);
             request.setAttribute("notelist", notelist);

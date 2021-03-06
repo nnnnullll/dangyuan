@@ -22,10 +22,10 @@ public class UserServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
 
         String type= (String) req.getSession().getAttribute("type");
+        Integer id= (Integer) req.getSession().getAttribute("id");
         String param=req.getParameter("param");
         req.setAttribute("type",type);
         if("goModify".equals(param)||"info".equals(param)){
-            Integer id= (Integer) req.getSession().getAttribute("id");
             Object userinfo=userService.getUserInfo(type,id);
             if("member".equals(type)){
                 Member user=(Member) userinfo;
@@ -46,7 +46,6 @@ public class UserServlet extends HttpServlet {
 
         }
         else if("doModify".equals(param)){
-            Integer id= (Integer) req.getSession().getAttribute("id");
             String xm=req.getParameter("xm");
             String xb=req.getParameter("xb");
             String sjh=req.getParameter("sjh");
@@ -61,10 +60,28 @@ public class UserServlet extends HttpServlet {
             req.getRequestDispatcher("userServlet?param=goModify").forward(req,resp);
         }
         else if("ModifyPwd".equals(param)){
-            Integer id= (Integer) req.getSession().getAttribute("id");
             String mm=req.getParameter("mm");
             userService.changePwd(type,id,mm);
             req.getRequestDispatcher("userServlet?param=goModify").forward(req,resp);
+        }else if ("goinfo".equals(param)){
+            String typee=req.getParameter("type");
+            Integer idd=Integer.parseInt(req.getParameter("id"));
+            Object userinfo=userService.getUserInfo(typee,idd);
+            if("member".equals(typee)){
+                Member user=(Member) userinfo;
+                req.setAttribute("user",user);
+            }else if("head".equals(typee)){
+                Head user=(Head) userinfo;
+                req.setAttribute("user",user);
+            }else if("admin".equals(typee)){
+                Admin user=(Admin) userinfo;
+                req.setAttribute("user",user);
+            }
+            if(typee.equals(type)&&idd.equals(id)){
+                req.setAttribute("showModi",1);
+            }else
+                req.setAttribute("showModi",0);
+            req.getRequestDispatcher("UserInfo.jsp").forward(req,resp);
         }
 
         if("member".equals(type)){

@@ -9,6 +9,7 @@ public class Admin {
     String xm,sjh,sfz,xb,csrq,jg,sqrq,jjrq,fzrq,ybrq,zsrq;
     Integer zt;
     String sqs1,sqs2,zys1,zys2;
+    String zbm;
 
     public Admin(Integer glyid, String mm, Integer zbid, String tx, Integer dyid, String xm, String sjh, String sfz, String xb, String csrq, String jg, String sqrq, String jjrq, String fzrq, String ybrq, String zsrq, Integer zt, String sqs1, String sqs2, String zys1, String zys2) {
         this.glyid = glyid;
@@ -202,5 +203,16 @@ public class Admin {
 
     public void setZys2(String zys2) {
         this.zys2 = zys2;
+    }
+
+    public void setZbm(String zbm) {
+        this.zbm=zbm;
+    }
+
+    public String getZbm() {
+        return zbm;
+    }
+    public String getZm() {
+        return null;
     }
 }
