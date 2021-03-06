@@ -35,7 +35,12 @@ public class NoteServlet extends HttpServlet{
         else if("delete".equals(param)){
             Integer ggid =Integer.parseInt(request.getParameter("ggid"));
             noteService.deleteNote(ggid);
-            response.sendRedirect("NoteServlet?param=alll");
+            String tp=request.getParameter("tp");
+            if("gly".equals(tp)){
+                response.sendRedirect("NoteServlet?param=alllzb");
+            }else {
+                response.sendRedirect("NoteServlet?param=alll");
+            }
 
         }else if("all".equals(param)){
             String type = null;

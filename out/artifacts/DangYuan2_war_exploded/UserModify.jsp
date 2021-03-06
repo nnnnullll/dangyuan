@@ -202,7 +202,7 @@
                         <input type="file"   name="p2" id="p2" onchange="change22(this)">
                     </a>
                 </div>
-               <input  class="mysub"  type="submit" value="导入" style="position: absolute;left: 0px;top:510px" />
+               <input  class="mysub"  type="submit" value="导入" style="position: absolute;left: 0px;top:510px" onsubmit="alert('上传成功！')" />
             </form>
     </div>
 

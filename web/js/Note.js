@@ -19,4 +19,8 @@ function deletenote(e){
     window.location.href = "NoteServlet?param=delete&ggid="+e;
 
 }
+function deletenotee(e){
+    alert("删除成功！");
+    window.location.href = "NoteServlet?param=delete&tp=gly&ggid="+e;
 
+}

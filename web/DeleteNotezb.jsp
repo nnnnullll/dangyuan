@@ -283,7 +283,7 @@
               </div>
               <div id="notelistsc">
                 <!-- <button onclick="deletenote(requestScope.notelist[0].ggid)">删除</button> -->
-                <button onclick="deletenote(${item.ggid})">删除</button>
+                <button onclick="deletenotee(${item.ggid})">删除</button>
               </div>
             </div>
             </c:forEach>

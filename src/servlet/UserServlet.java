@@ -41,6 +41,7 @@ public class UserServlet extends HttpServlet {
                 req.getRequestDispatcher("UserModify.jsp").forward(req,resp);
             }
             else if("info".equals(param)){
+                req.setAttribute("showModi",1);
                 req.getRequestDispatcher("UserInfo.jsp").forward(req,resp);
             }
 
